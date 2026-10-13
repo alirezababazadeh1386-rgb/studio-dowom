@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>استودیو فریلنس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<style id="app-css">:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#faf7f2;--surface:#ffffff;--ink:#1c1a17;--muted:#6b665e;--line:#e8e2d8;
+  --accent:#e8553d;--accent-ink:#ffffff;
+  --soft:color-mix(in srgb,var(--accent) 12%,transparent);
+  --shadow:0 1px 2px rgba(28,26,23,.05),0 8px 24px rgba(28,26,23,.06);
+  --radius:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#14130f;--surface:#1d1b17;--ink:#f4efe6;--muted:#a39d91;--line:#2e2b25;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);}
+}
+:root[data-theme="dark"]{--bg:#14130f;--surface:#1d1b17;--ink:#f4efe6;--muted:#a39d91;--line:#2e2b25;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.4;margin:0}
+p{margin:0}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+.logo{width:36px;height:36px;border-radius:11px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800}
+.nav{display:flex;gap:6px;margin-inline-start:auto}
+.nav a{padding:6px 12px;border-radius:999px;color:var(--muted);font-weight:500;font-size:15px}
+.nav a:hover{background:var(--soft);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:14px;padding:12px 22px;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn-sm{padding:8px 16px;border-radius:12px;font-size:14px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--ink)}
+.link{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--accent);cursor:pointer}
+.link:hover{text-decoration:underline}
+
+/* hero */
+.hero{padding:72px 0 56px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% auto auto -10%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--soft),transparent 65%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+.eyebrow{display:inline-block;background:var(--soft);color:var(--accent);font-weight:700;font-size:14px;padding:4px 14px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.5px}
+.lead{margin-top:18px;font-size:18px;color:var(--muted);max-width:56ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.badges{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 18px;color:var(--muted);font-size:14.5px}
+.badges li::before{content:"✓";color:var(--accent);font-weight:800;margin-inline-end:6px}
+.hero-art{position:relative;display:grid;gap:14px}
+.mini-card{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.mini-card:nth-child(2){margin-inline-start:28px}
+.mini-card:nth-child(3){margin-inline-start:8px}
+.mini-card b{display:block;font-size:16px}
+.mini-card small{color:var(--muted)}
+
+/* sections */
+.sec{padding:72px 0}
+.sec.alt{background:color-mix(in srgb,var(--surface) 70%,var(--bg))}
+.sec-head{margin-bottom:34px;max-width:60ch}
+.sec-head h2{font-size:clamp(24px,3.4vw,34px);font-weight:800}
+.sec-head p{color:var(--muted);margin-top:8px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.svc{padding:24px;display:flex;flex-direction:column;gap:10px}
+.ico{width:52px;height:52px;border-radius:15px;background:var(--soft);display:grid;place-items:center;font-size:26px}
+.svc h3{font-size:19px}
+.svc p{color:var(--muted);font-size:15px;flex:1}
+.svc-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;border-top:1px dashed var(--line);font-size:14px}
+.price{color:var(--muted)}
+
+/* portfolio */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 16px;font:inherit;font-size:14.5px;cursor:pointer}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.work{overflow:hidden;display:flex;flex-direction:column}
+.work .thumb{aspect-ratio:16/10;width:100%;object-fit:cover;background:var(--line)}
+.ph{aspect-ratio:16/10;display:grid;place-items:center;font-size:54px;font-weight:800;color:#fff;background:linear-gradient(135deg,hsl(var(--h) 70% 62%),hsl(calc(var(--h) + 40) 70% 46%))}
+.work .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tag{align-self:flex-start;background:var(--soft);color:var(--accent);font-size:13px;font-weight:700;padding:1px 10px;border-radius:999px}
+.work h3{font-size:17px}
+.work p{color:var(--muted);font-size:14.5px;flex:1}
+.empty{color:var(--muted);padding:30px;text-align:center;border:1.5px dashed var(--line);border-radius:var(--radius)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:s}
+.step{padding:22px;position:relative}
+.step::before{counter-increment:s;content:counter(s);width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800;margin-bottom:12px}
+.step h3{font-size:17px;margin-bottom:4px}
+.step p{color:var(--muted);font-size:15px}
+
+/* form */
+.form{padding:28px;display:grid;gap:26px;max-width:820px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:12px;min-width:0}
+legend{font-weight:800;font-size:17px;padding:0;margin-bottom:10px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.tile{display:flex;align-items:center;gap:10px;text-align:start;background:var(--bg);border:1.5px solid var(--line);color:var(--ink);border-radius:14px;padding:12px 14px;font:inherit;font-size:14.5px;cursor:pointer;transition:border-color .15s,background .15s}
+.tile:hover{border-color:var(--accent)}
+.tile.on{border-color:var(--accent);background:var(--soft);font-weight:700}
+.tile .t-ico{font-size:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label.f{display:grid;gap:6px;font-size:14.5px;font-weight:500}
+label.f>span{color:var(--muted)}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;width:100%;min-width:0}
+textarea{resize:vertical;min-height:110px;line-height:1.8}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+input[type=color]{padding:3px;height:44px;cursor:pointer}
+.err{color:#d6322a;font-size:13.5px;font-weight:500}
+.result{padding:30px;max-width:820px;display:grid;gap:16px}
+.ok{width:54px;height:54px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-size:28px;font-weight:800}
+.chan{display:flex;flex-wrap:wrap;gap:10px}
+.note{background:var(--soft);border-radius:12px;padding:10px 14px;font-size:14px}
+.note.warn{background:rgba(214,50,42,.1);color:#d6322a}
+
+/* faq + footer */
+.faq{display:grid;gap:12px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px 20px}
+.faq summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"＋";color:var(--accent)}
+.faq details[open] summary::after{content:"－"}
+.faq details p{color:var(--muted);padding-bottom:16px}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;color:var(--muted);font-size:14.5px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+.foot nav{display:flex;flex-wrap:wrap;gap:14px}
+.foot a:hover{color:var(--accent)}
+
+/* editor */
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;box-shadow:0 8px 28px rgba(0,0,0,.28);cursor:pointer}
+.drawer{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(460px,100%);z-index:70;background:var(--surface);border-inline-start:1px solid var(--line);box-shadow:0 0 40px rgba(0,0,0,.25);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.d-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.d-tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 12px;border-bottom:1px solid var(--line)}
+.d-tabs button{flex:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:14px;padding:6px 12px;border-radius:999px;cursor:pointer}
+.d-tabs button.on{background:var(--ink);color:var(--bg);font-weight:700}
+.d-body{flex:1;overflow-y:auto;padding:16px 18px;display:grid;gap:14px;align-content:start}
+.d-foot{border-top:1px solid var(--line);padding:12px 18px;display:grid;gap:8px}
+.d-foot>div{display:flex;gap:8px}
+#ed-msg{font-size:13px;color:var(--muted);min-height:20px}
+.g-title{font-weight:800;font-size:15px;margin-top:8px;padding-top:12px;border-top:1px dashed var(--line)}
+.g-title:first-child{margin-top:0;border:0;padding-top:0}
+small.hint{color:var(--muted);font-size:12.5px;font-weight:400}
+details.item{border:1px solid var(--line);border-radius:14px;padding:4px 14px;background:var(--bg)}
+details.item summary{cursor:pointer;font-weight:700;padding:10px 0}
+details.item[open]{display:grid;gap:12px;padding-bottom:14px}
+.mini{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:5px 12px;font:inherit;font-size:13.5px;cursor:pointer}
+.mini.danger{color:#d6322a;border-color:rgba(214,50,42,.4)}
+.btn-add{border:1.5px dashed var(--accent);background:var(--soft);color:var(--accent);border-radius:14px;padding:11px;font:inherit;font-weight:700;cursor:pointer}
+.irow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.imgprev{width:100%;max-height:150px;object-fit:cover;border-radius:10px}
+.edit-banner{background:var(--ink);color:var(--bg);text-align:center;font-size:13.5px;padding:6px 10px}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero{padding-top:40px}
+  .nav{display:none}
+  .bar{justify-content:space-between}
+  .row2{grid-template-columns:1fr}
+  .sec{padding:52px 0}
+  .mini-card:nth-child(n){margin-inline-start:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+/* ===== shared widgets ===== */
+.muted{color:var(--muted)}
+.hide{display:none!important}
+.badge{--c:#6b7280;display:inline-flex;align-items:center;gap:6px;padding:2px 12px;border-radius:999px;font-size:13px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);white-space:nowrap}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.prog{display:flex;align-items:center;gap:12px}
+.prog .bar{flex:1;height:10px;border-radius:999px;background:var(--line);overflow:hidden}
+.prog .bar i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .4s}
+.prog b{font-size:14px;min-width:42px;text-align:end}
+.stepper{display:grid;grid-template-columns:repeat(5,1fr);margin:20px 0 8px}
+.stp{position:relative;text-align:center;font-size:12.5px;color:var(--muted);line-height:1.5}
+.stp::before{content:"";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;margin:0 auto 6px;background:var(--surface);border:2px solid var(--line);color:#fff;font-size:12px;font-weight:800;position:relative;z-index:1}
+.stp::after{content:"";position:absolute;top:11px;inset-inline-start:calc(50% + 14px);inset-inline-end:calc(-50% + 14px);height:2px;background:var(--line)}
+.stp:last-child::after{display:none}
+.stp.done::before{content:"✓";background:var(--accent);border-color:var(--accent)}
+.stp.done::after{background:var(--accent)}
+.stp.cur::before{border-color:var(--accent);box-shadow:0 0 0 4px var(--soft)}
+.stp.cur,.stp.done{color:var(--ink)}
+.stp.cur{font-weight:700}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0 0}
+.facts div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.facts dt{font-size:12.5px;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-weight:700;font-size:15px}
+.timeline{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:0}
+.timeline li{position:relative;padding:0 22px 16px 0;border-inline-start:0}
+.timeline li::before{content:"";position:absolute;inset-inline-start:0;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline li::after{content:"";position:absolute;inset-inline-start:4px;top:20px;bottom:-2px;width:2px;background:var(--line)}
+.timeline li:last-child::after{display:none}
+.timeline time{display:block;font-size:12.5px;color:var(--muted)}
+.timeline p{white-space:pre-wrap}
+.toast{position:fixed;inset-inline:0;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:120;display:flex;justify-content:center;pointer-events:none}
+.toast span{background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:12px;font-size:14.5px;box-shadow:0 8px 28px rgba(0,0,0,.3);pointer-events:auto;max-width:min(520px,calc(100% - 32px))}
+.btn.danger{background:#d6322a;color:#fff}
+.btn.sm{padding:7px 14px;font-size:13.5px;border-radius:11px}
+.btn[disabled]{opacity:.55;cursor:default;transform:none;filter:none}
+.ltr{direction:ltr;text-align:right;unicode-bidi:plaintext}
+.kbd{font-family:ui-monospace,Menlo,Consolas,monospace;direction:ltr;unicode-bidi:isolate;letter-spacing:.06em}
+
+/* ===== slim bar for portal/admin views ===== */
+.vbar .bar{height:58px}
+.vbar .sp{margin-inline-start:auto;display:flex;gap:8px;align-items:center}
+
+/* ===== customer portal ===== */
+.pwrap{padding:34px 0 64px}
+.auth{max-width:520px;margin:12px auto 0;padding:28px;display:grid;gap:18px}
+.auth h1{font-size:24px}
+.tabs2{display:flex;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:4px}
+.tabs2 button{flex:1;border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;padding:9px 10px;border-radius:11px;cursor:pointer}
+.tabs2 button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.codein{font-size:20px;text-align:center;letter-spacing:.14em;direction:ltr;text-transform:uppercase;font-family:ui-monospace,Menlo,Consolas,monospace}
+.demo-hint{font-size:13.5px}
+.p-head{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-end;margin-bottom:22px}
+.p-head h1{font-size:clamp(24px,3.5vw,32px)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:30px}
+.stat{padding:16px 18px}
+.stat small{display:block;color:var(--muted);font-size:13px}
+.stat b{font-size:24px;font-weight:800}
+.p-sec{margin:34px 0 14px;font-size:20px;display:flex;align-items:center;gap:10px}
+.p-sec span{font-size:13px;font-weight:700;background:var(--soft);color:var(--accent);border-radius:999px;padding:0 10px}
+.ords{display:grid;gap:16px}
+.ord{padding:22px}
+.ord header{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.ord h3{font-size:19px;margin:4px 0 2px}
+.ord small{color:var(--muted)}
+.ord.past{padding:16px 20px;box-shadow:none}
+.ord.past h3{font-size:16px}
+.latest{margin-top:14px;background:var(--bg);border:1px solid var(--line);border-inline-start:4px solid var(--accent);border-radius:12px;padding:10px 14px;font-size:14.5px}
+.latest small{display:block}
+.ord details{margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+.ord summary{cursor:pointer;font-weight:700;padding:4px 0;color:var(--accent)}
+.ord .det{white-space:pre-wrap;color:var(--muted);margin:10px 0}
+.lnks{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.lnks a{border:1.5px solid var(--line);border-radius:10px;padding:5px 12px;font-size:14px;font-weight:700}
+.lnks a:hover{border-color:var(--accent);color:var(--accent)}
+.support{padding:20px 22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:34px}
+
+/* ===== admin ===== */
+.adm{display:grid;grid-template-columns:232px 1fr;min-height:100vh;background:var(--bg)}
+.adm-side{position:sticky;top:0;align-self:start;height:100vh;background:var(--surface);border-inline-end:1px solid var(--line);padding:18px 14px;display:flex;flex-direction:column;gap:6px}
+.adm-side .brand{padding:4px 8px 14px}
+.adm-side button.t{display:flex;align-items:center;gap:10px;border:0;background:transparent;color:var(--muted);font:inherit;font-weight:500;padding:10px 12px;border-radius:12px;cursor:pointer;text-align:start;position:relative}
+.adm-side button.t:hover{background:var(--soft);color:var(--ink)}
+.adm-side button.t.on{background:var(--ink);color:var(--bg);font-weight:700}
+.adm-side .dot{margin-inline-start:auto;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.adm-side .grow{flex:1}
+.adm-main{padding:26px clamp(16px,3vw,36px) 70px;min-width:0}
+.adm-top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:22px}
+.adm-top h1{font-size:26px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.tools input,.tools select{width:auto;flex:1;min-width:150px;max-width:340px}
+.grid-s{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:22px}
+.kpi{padding:16px 18px}
+.kpi small{display:block;color:var(--muted);font-size:13px}
+.kpi b{font-size:26px;font-weight:800;display:block;margin-top:2px}
+.kpi.warn b{color:#d6322a}
+.panel{padding:20px 22px;margin-bottom:20px}
+.panel h2{font-size:18px;margin-bottom:12px}
+.alert{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:color-mix(in srgb,#d97706 14%,var(--surface));border:1px solid color-mix(in srgb,#d97706 45%,var(--line));border-radius:14px;padding:12px 18px;margin-bottom:20px}
+.alert.ok{background:color-mix(in srgb,#16a34a 12%,var(--surface));border-color:color-mix(in srgb,#16a34a 40%,var(--line))}
+.dist{display:grid;gap:10px}
+.dist .r{display:grid;grid-template-columns:150px 1fr 34px;gap:10px;align-items:center;font-size:14px}
+.dist .b{height:10px;background:var(--line);border-radius:999px;overflow:hidden}
+.dist .b i{display:block;height:100%;background:var(--c,var(--accent));border-radius:999px}
+.rows{display:grid;gap:10px}
+.rc{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;transition:border-color .15s}
+.rc:hover{border-color:var(--accent)}
+.rc .main b{display:block}
+.rc .main small{color:var(--muted);font-size:13px}
+.rc .side{display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:150px}
+.rc .prog{width:150px}
+.rc .prog b{min-width:34px;font-size:12.5px}
+.chipy{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:999px;font-size:12.5px;padding:0 10px;color:var(--muted)}
+.chipy.red{color:#d6322a;border-color:rgba(214,50,42,.4)}
+.empty2{padding:34px;text-align:center;color:var(--muted);border:1.5px dashed var(--line);border-radius:16px}
+.gate{max-width:560px;margin:60px auto;padding:30px;display:grid;gap:14px}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.5);display:grid;place-items:center;padding:14px;padding-top:calc(14px + env(safe-area-inset-top,0px));padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+.mbox{background:var(--surface);color:var(--ink);border-radius:20px;width:min(780px,100%);max-height:100%;overflow:auto;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.mhead{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:2}
+.mhead h2{font-size:19px}
+.mbody{padding:20px 22px;display:grid;gap:16px}
+.mfoot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding:14px 22px;border-top:1px solid var(--line);position:sticky;bottom:0;background:var(--surface)}
+.mfoot .l{display:flex;gap:10px;flex-wrap:wrap}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.sub{font-weight:800;font-size:15px;padding-top:10px;border-top:1px dashed var(--line)}
+.sub:first-child{border:0;padding-top:0}
+.codebox{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.codebox .kbd{font-size:20px;font-weight:700;flex:1;min-width:190px}
+.ul-edit{display:grid;gap:8px}
+.ul-edit .it{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:start;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.ul-edit .it time{display:block;font-size:12px;color:var(--muted)}
+.ul-edit .it p{white-space:pre-wrap;font-size:14.5px}
+.lk{display:grid;grid-template-columns:1fr 1.4fr auto;gap:8px;align-items:center}
+input[type=range]{padding:0;height:34px;accent-color:var(--accent);border:0;background:transparent}
+input[type=checkbox]{width:auto;accent-color:var(--accent)}
+label.chk{display:flex;gap:10px;align-items:center;font-weight:500}
+.pre{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.9}
+.hint2{font-size:13px;color:var(--muted)}
+.steps-list{margin:6px 0 0;padding-inline-start:22px;color:var(--muted);font-size:14.5px;display:grid;gap:4px}
+
+@media (max-width:820px){
+  .vbar .muted{display:none}
+  .vbar .brand{font-size:16px}
+  .vbar .btn-sm{padding:6px 12px;font-size:13px}
+  .stats{grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px}
+  .stat{padding:12px 14px}
+  .stat b{font-size:20px}
+  .grid-s{grid-template-columns:repeat(2,1fr);gap:10px}
+  .kpi{padding:12px 14px}
+  .kpi b{font-size:22px}
+  .adm-main{padding-top:18px}
+  .adm-top h1{font-size:22px}
+  .adm{grid-template-columns:1fr}
+  .adm-side{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;height:auto;flex-direction:row;overflow-x:auto;padding:8px 10px;border-inline-end:0;border-bottom:1px solid var(--line);align-items:center}
+  .adm-side .brand,.adm-side .grow{display:none}
+  .adm-side button.t{flex:none;padding:8px 14px}
+  .f2,.f3{grid-template-columns:1fr}
+  .rc{grid-template-columns:1fr}
+  .rc .side{align-items:flex-start;flex-direction:row;flex-wrap:wrap;align-items:center}
+  .dist .r{grid-template-columns:120px 1fr 28px}
+  .lk{grid-template-columns:1fr}
+  .stepper{font-size:11px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="ed"></div>
+<div id="modal"></div>
+<div id="toast" class="toast"></div>
+<script id="site-data" type="application/json">{"brand":"استودیو فریلنس","accent":"#e8553d","hero":{"eyebrow":"خدمات فریلنسری برای کسب‌وکارها و افراد","title":"پروژه‌ات را بسپار؛ نتیجه را تحویل بگیر","subtitle":"از طراحی سایت و لوگو تا تولید محتوا و تدوین ویدیو. سفارشت را در چند دقیقه ثبت کن، ما با تعهد و به‌موقع انجامش می‌دهیم.","badges":["تحویل به‌موقع","بازبینی رایگان","پشتیبانی بعد از تحویل"]},"sections":{"services":{"t":"خدماتی که انجام می‌دهیم","s":"هر خدمت را که لازم داری انتخاب کن تا مستقیم به فرم سفارش بروی."},"portfolio":{"t":"نمونه‌کارهای ما","s":"بخشی از پروژه‌هایی که تا امروز تحویل داده‌ایم."},"process":{"t":"سفارش چطور انجام می‌شود؟","s":"چهار قدم ساده تا تحویل پروژه."},"order":{"t":"ثبت سفارش","s":"فرم را پر کن؛ درخواستت را مستقیم برای ما می‌فرستی و سریع پاسخ می‌دهیم."},"faq":{"t":"سوالات متداول","s":""}},"services":[{"id":"s1","icon":"🌐","title":"طراحی وب‌سایت","desc":"سایت شرکتی، فروشگاهی یا شخصی؛ ریسپانسیو، سریع و قابل مدیریت.","price":"شروع از ۳,۰۰۰,۰۰۰ تومان"},{"id":"s2","icon":"🎨","title":"لوگو و هویت بصری","desc":"طراحی لوگو، رنگ و فونت برند و ست اداری با چند پیشنهاد متفاوت.","price":"شروع از ۱,۰۰۰,۰۰۰ تومان"},{"id":"s3","icon":"🖼️","title":"طراحی گرافیک و شبکه‌های اجتماعی","desc":"پست، استوری، بنر، پوستر و کاتالوگ با هویت یکپارچه برند شما.","price":"شروع از ۲۰۰,۰۰۰ تومان"},{"id":"s4","icon":"🎬","title":"تدوین و موشن گرافیک","desc":"تدوین ویدیو، ریلز، تیزر تبلیغاتی و موشن گرافیک کوتاه.","price":"شروع از ۵۰۰,۰۰۰ تومان"},{"id":"s5","icon":"✍️","title":"تولید محتوا و ترجمه","desc":"مقاله، متن سایت، کپشن، ترجمه فارسی/انگلیسی و ویراستاری.","price":"شروع از ۱۵۰,۰۰۰ تومان"},{"id":"s6","icon":"⚙️","title":"برنامه‌نویسی و اتوماسیون","desc":"ربات تلگرام، اسکریپت، اتوماسیون کارهای تکراری و اتصال سرویس‌ها.","price":"بر اساس پروژه"}],"portfolio":[{"id":"p1","title":"سایت فروشگاه لوازم ورزشی (نمونه)","category":"طراحی وب","desc":"این یک نمونه است؛ عنوان، توضیح و تصویر را از بخش ویرایش تغییر بده.","image":"","link":""},{"id":"p2","title":"هویت بصری کافه (نمونه)","category":"لوگو و هویت","desc":"لوگو، پالت رنگی و منوی چاپی برای یک کافه.","image":"","link":""},{"id":"p3","title":"پک پست اینستاگرام (نمونه)","category":"گرافیک","desc":"۱۲ پست و ۶ استوری با قالب یکپارچه.","image":"","link":""},{"id":"p4","title":"ویدیو معرفی محصول (نمونه)","category":"ویدیو","desc":"تیزر ۳۰ ثانیه‌ای برای معرفی یک اپلیکیشن.","image":"","link":""},{"id":"p5","title":"ترجمه کتاب راهنما (نمونه)","category":"محتوا و ترجمه","desc":"ترجمه تخصصی ۸۰ صفحه از انگلیسی به فارسی.","image":"","link":""},{"id":"p6","title":"ربات سفارش‌گیر تلگرام (نمونه)","category":"برنامه‌نویسی","desc":"ربات ثبت سفارش با پنل مدیریت ساده.","image":"","link":""}],"steps":[{"title":"ثبت درخواست","desc":"خدمت مورد نظرت را انتخاب می‌کنی و توضیح می‌دهی چه می‌خواهی."},{"title":"هماهنگی و قیمت","desc":"پیام تو را بررسی می‌کنیم و قیمت و زمان دقیق را اعلام می‌کنیم."},{"title":"انجام پروژه","desc":"کار را شروع می‌کنیم و در طول مسیر از پیشرفت باخبرت می‌کنیم."},{"title":"تحویل و بازبینی","desc":"نتیجه را تحویل می‌دهیم و اصلاحات لازم را رایگان انجام می‌دهیم."}],"faq":[{"q":"پرداخت چطور انجام می‌شود؟","a":"معمولاً بخشی از مبلغ قبل از شروع و باقی پس از تحویل نهایی پرداخت می‌شود. جزئیات در هماهنگی اولیه مشخص می‌شود."},{"q":"چقدر طول می‌کشد؟","a":"بسته به نوع پروژه از چند روز تا چند هفته. زمان دقیق قبل از شروع اعلام می‌شود."},{"q":"اگر نتیجه را نپسندیدم چه؟","a":"تعدادی بازبینی رایگان در قیمت لحاظ شده و تا رسیدن به نتیجه مطلوب کنارتان هستیم."},{"q":"آیا می‌توانم سفارش سفارشی بدهم؟","a":"بله. در فرم گزینه «چیز دیگر» را انتخاب کن و نیازت را توضیح بده."}],"form":{"budgets":["زیر ۵۰۰ هزار تومان","۵۰۰ هزار تا ۲ میلیون تومان","۲ تا ۱۰ میلیون تومان","بالای ۱۰ میلیون تومان","هنوز نمی‌دانم"],"deadlines":["عجله‌ای (کمتر از ۳ روز)","حدود یک هفته","۲ تا ۴ هفته","فرقی نمی‌کند"]},"contact":{"whatsapp":"","telegram":"","email":"","instagram":"","phone":""}}</script>
+<script id="portal-data" type="application/json">{"v":1,"salt":"JnRQDiQTVOEUGdRxaIXbtw==","publishedAt":1791890999247,"demoCode":"DEMO-2026-TEST","records":[{"i":"886f51fc4901c4e85cabd485","v":"ufKHUbI/+ewKS3/U","c":"2PUoJzgWHHi/5xZFMMiSWNOz1dYuc2K254RZ2IR4hvXTbKPAOM5z1M916/KAJUC7vXi1ssZIjAKZLDbKABdj35ixA3AP8Ezq7W8Y/05kT1FyWc2G0ZIm3TBJGyq7+CUwMUdqEBVOEI9U+dNNVydLb+mReAGQ+lWP77+6vmPQRHAIxLWQkilVDodD5HEGM2XCF+uir87lIQcJAllFUVez/GGRoRgFv7qB8R2Tu8hLaW9BJrkdzoCzMXGpiBmWzNOWCNwHECxtlwAknOebTtZq7K1DHXe8aH9jW3OeV1O2B8LeI+unZYmALtMMqGwhNJJDYVwAXQdRHIIMzJakGIzfu7OjH8ywP/SCWXepayPsBXcrbt8yM8PjZSMYc7Z8h1TnNf/+j8WnGevsFAz1xynNfIKVQBoorsY+GZA29oUpCV9C+5Wpuqi5jqrVpmWULYZ9iTpoVFgSsBhWqGQ69kgrOVFA4tpR2M8zLNUHxqmzH9tQOfaMtdCS78PYCmgdQ+PUekfbepar9BO21Sndb6l5PVZNzflB73loFb3iyF4VhsowNzrQ/f55RgGKH5M6pj45kVaSiSFjqbHQZYTkvWuDIWhuBIZpezAT5hBGppkwiAAK1a2Pur6x46Q9kTpoF6yvvYvnpkkZVPRwWeMFy3yViJce9PP338UGg3mF9oarQJrOlPbx/v2ykou1OUa/Ke3JyuXKigHypBiQ+gYsbTBKYbrJLdrOaWuFPXO3hW2SeRP/dJQnJCLDp7wzZcMA9gvVSJxCs0MEjdmVssub/gpop5FvmUthji80SK0NHstNoXCbK1p3KqSCP7pMZ77V3khDAlN7mlr29g3bDEQPKJjUCsn8tjZKZEGoZeZ8vsrxROVd1ZvjjPvYal39gHlgMSvJ48jaHXGltfK64QgK/z3O4wne/TABbH6hl4jmsRYOywzyer3XUUnMp0pVjb7tUWPNr+FyJe38HJyo8zmdbJaf4UercMH5RhjeeTcicqtFscS8q59HD/p85YPW/49e6GYckiS2BihqM73+BtfySJVVv4P7Pkl3WyEjhCvkZHf3YbEOoqme9huE23HPQ4jJR1HyZgkaLM9ZD/EI1WabqEd+onMpprixo90fRNpbDrxCy/b0FRSAjKUKCNJbx/knY1ghun+tRS4aSebd5EdpugD7IH8xBtd5RnoZj3hNh5O58jJZ4E3PJ0LsUzLL3ZOWIfMlSgzcNI8qprzyRf+dm/5DNYNhFFwluB1pCGMCSrtUe3SM2crSGOG5S40fnRBwjFg9tlOpK18xlq4gOQ6zfb+f3SOfs59grhUFQQhqXXR1EW7upRwdRR0jLdZI1CYPFOoi4B4hA6JuV7SWXeHltoZfisk+ISmpkXOz/JgXeVWmYiLK2D9BzpzHD+ZJrWoY3sD51tG/xUwkpr0SKK2l97mDu292e0SvAb94JduNzkkpbnVBR6ZYhIV+WxeDMMAkjF9okHjqfRKhZ2oojxfD6ER8uXdO8ewkauPSuMwmL1hnLILSvm+m61mU3fAZ4DA5u3N+OAe17mVrwiFOKNnyOuFePmNr9spDQs0Ff0KpvTS0jRClmJqluWaSYn7YpEXtQBwovSP4VWPQwpth9vaptJRjGyCh2NtIqHIOpkH5LMNWA+vzV+4G5Piz7B+fmyo+9gizf0QDlphT1ZVy0t51RIHZwDBpfZoU97HJxDcT7LPjUDESysx2QzYWDy+wzKNKucaCehKFFFoTIy0x+GNEvW3w/nYgi9hP2gJA9HgujTbTVS/Lhp8Xmrb4uqNrSh2JhSDj7ICl/5gbydvwvvT6J7P8jcygKB2Tyrfi9+ZsbcZMsY3vKqHB7o8xIwmGbudNr/0F6zAIjLPbtFBaRe0RaG9AGFk41Kj7+HfrcTKH9Ta3BJuLehT6c2iMUGs6rUEGd32NYEonNM9s2RVcfmsRU0iJ9ZrUyASCq4VdTJQH2BX1fo/f7dMddlH7ylwYqB8/b0Rg148SqqxvMQJYEOzJtQdPRR89zn6PQhZDT1ppf8UwgoSskzabTs6eJaVhu2raS7Y/xWROQFp7kSvcS7JSFLtfSvGj6LJZXtB0JGmmQ+J8Hxwgooo5X6QH5HTk1lCWME+AaJqIPPhTY0dgNm9gEj7dEfBoBo7u4xzPbTPNtC2GN1CHXyHCVwhsTeo3LgClNckNTJQ22u4yBBGFzVJi0H8WAAnwysQrQatGaMjtIQZgdFyvGUe6Yhihn3L0UmHf0PlCKxLY4Ey4uvXiug2JHAUndzy5ms3V8qegKpGLYsQGaF6laEpfkVMFvOZx5qYwxsvi2Nv3X4TZROnLbNRmgvHcCHTwCjySo82mbEz9cKVNEv/RLhwrl5/Ihnwf28K+qQfaA1cddyDzMP6vKYXDC39M5UWu9ThN8q8+386JtM3LzGrdtJhycM4VqbaRix2GhYFARTWvHhshZsyRLodC4I1o97t2yhF6qyjC4v6DYpaUbqRefJr0UVKAdHc7GSnjW0vdF6v91C8cZkmXF5OymP+VIOX+ywsL2i+ug1dQMzRxJJ5ZoTQPpmTcLtSzDlnz39I/kLGHRz1NeRz6UxV/fugOrCTyM5RapEQueaqcksIR6o/PDgTcVllgwIGaWBvaeoL4KYDUaGEFu5B7Goyvj4SoMB/zWdT6U4LsiKVtL8cKw5pX+XzK+bd29FB96B2ADp+HKKApBsDVmmQJOFP/Qj7bhvf+4J9inFUxp0uim4A82YbKTrrpOZlPKGnq8tgypXrsBAIlfjGpaqxoflCwG8oasV71xFwIecLv1V2pKWIRQVX0adT+XlIBy4TQTK+tZGl6j3qVExjXAF0ypePJOxLqkDwCaNtG+puun5bnIDLvTbSUHgUPAuDR1DxJXMXBHq69nfYW2iZfBrMDLtRiug=="}]}</script>
+<script id="app-js">(function(){
+'use strict';
+/* ==== PURE:START ==== */
+var ITER = 100000;
+var CODE_ALPHABET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+
+function fixDigits(s){
+  return String(s == null ? '' : s)
+    .replace(/[۰-۹]/g, function(d){ return String(d.charCodeAt(0) - 1776); })
+    .replace(/[٠-٩]/g, function(d){ return String(d.charCodeAt(0) - 1632); });
+}
+function normCode(s){
+  return fixDigits(s).toUpperCase().replace(/[^0-9A-Z]/g, '').replace(/O/g, '0').replace(/[IL]/g, '1');
+}
+function genCode(){
+  var b = new Uint8Array(12); crypto.getRandomValues(b);
+  var s = ''; for (var i = 0; i < 12; i++) s += CODE_ALPHABET[b[i] % 32];
+  return s.slice(0, 4) + '-' + s.slice(4, 8) + '-' + s.slice(8, 12);
+}
+function b64e(u8){ var s = ''; for (var i = 0; i < u8.length; i++) s += String.fromCharCode(u8[i]); return btoa(s); }
+function b64d(s){ var b = atob(s), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
+function hex(u8){ var s = ''; for (var i = 0; i < u8.length; i++) s += (u8[i] < 16 ? '0' : '') + u8[i].toString(16); return s; }
+
+async function deriveKeys(code, salt){
+  var km = await crypto.subtle.importKey('raw', new TextEncoder().encode(normCode(code)), 'PBKDF2', false, ['deriveBits']);
+  var bits = new Uint8Array(await crypto.subtle.deriveBits({ name: 'PBKDF2', salt: salt, iterations: ITER, hash: 'SHA-256' }, km, 512));
+  var key = await crypto.subtle.importKey('raw', bits.slice(0, 32), 'AES-GCM', false, ['encrypt', 'decrypt']);
+  return { id: hex(bits.slice(32, 44)), key: key };
+}
+async function sealRecord(code, salt, obj){
+  var k = await deriveKeys(code, salt);
+  var iv = crypto.getRandomValues(new Uint8Array(12));
+  var ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, k.key, new TextEncoder().encode(JSON.stringify(obj))));
+  return { i: k.id, v: b64e(iv), c: b64e(ct) };
+}
+async function openRecord(code, portal){
+  if (!portal || !portal.salt || !portal.records || !portal.records.length) return null;
+  var k = await deriveKeys(code, b64d(portal.salt));
+  var r = portal.records.filter(function(x){ return x.i === k.id; })[0];
+  if (!r) return null;
+  try {
+    var pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64d(r.v) }, k.key, b64d(r.c));
+    return JSON.parse(new TextDecoder().decode(pt));
+  } catch (e) { return null; }
+}
+
+/* ---- phone ---- */
+function phoneKey(p){ var d = fixDigits(p).replace(/\D/g, ''); return d.length > 10 ? d.slice(-10) : d; }
+
+/* ---- dates (Jalali via Intl) ---- */
+function toMs(v){
+  if (typeof v === 'number') return v;
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v || ''));
+  return m ? Date.UTC(+m[1], +m[2] - 1, +m[3], 12) : NaN;
+}
+function jalParts(ms){
+  var parts = new Intl.DateTimeFormat('en-u-ca-persian', { timeZone: 'UTC', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(new Date(ms));
+  var o = {}; parts.forEach(function(p){ o[p.type] = parseInt(p.value, 10); });
+  return [o.year, o.month, o.day];
+}
+function isoToJalInput(iso){
+  var ms = toMs(iso); if (isNaN(ms)) return '';
+  var p = jalParts(ms);
+  return p[0] + '/' + (p[1] < 10 ? '0' : '') + p[1] + '/' + (p[2] < 10 ? '0' : '') + p[2];
+}
+function jalToIso(jy, jm, jd){
+  if (!(jy > 1200 && jy < 1700 && jm >= 1 && jm <= 12 && jd >= 1 && jd <= 31)) return null;
+  var off = jm <= 6 ? (jm - 1) * 31 : 186 + (jm - 7) * 30;
+  var est = Date.UTC(jy + 621, 2, 21, 12) + (off + jd - 1) * 86400000;
+  for (var k = -4; k <= 4; k++) {
+    var t = est + k * 86400000, p = jalParts(t);
+    if (p[0] === jy && p[1] === jm && p[2] === jd) return new Date(t).toISOString().slice(0, 10);
+  }
+  return null;
+}
+function parseJalInput(s){
+  s = fixDigits(s).trim(); if (!s) return '';
+  var m = /^(\d{4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})$/.exec(s);
+  if (!m) return null;
+  return jalToIso(+m[1], +m[2], +m[3]);
+}
+function dateFa(v){
+  var ms = toMs(v); if (isNaN(ms)) return '—';
+  return new Intl.DateTimeFormat('fa-IR-u-ca-persian', { timeZone: typeof v === 'number' ? 'Asia/Tehran' : 'UTC', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(ms));
+}
+function dateTimeFa(ms){
+  if (!ms) return '—';
+  return new Intl.DateTimeFormat('fa-IR-u-ca-persian', { timeZone: 'Asia/Tehran', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(ms));
+}
+function todayIso(){ return new Date().toISOString().slice(0, 10); }
+function money(n){ return Number(n || 0).toLocaleString('fa-IR') + ' تومان'; }
+function numFa(n){ return Number(n || 0).toLocaleString('fa-IR', { useGrouping: false }); }
+
+/* ---- statuses ---- */
+var ST = {
+  'new':       { l: 'ثبت شد (در بررسی)',     c: '#6b7280', p: 10,  s: 0 },
+  'quote':     { l: 'قیمت و زمان اعلام شد',  c: '#2563eb', p: 25,  s: 1 },
+  'active':    { l: 'در حال انجام',           c: '#d97706', p: 55,  s: 2 },
+  'revision':  { l: 'در حال اصلاحات',        c: '#7c3aed', p: 85,  s: 2 },
+  'review':    { l: 'منتظر بازبینی شما',     c: '#0891b2', p: 80,  s: 3 },
+  'done':      { l: 'تحویل شد',               c: '#16a34a', p: 100, s: 4 },
+  'hold':      { l: 'متوقف شده',              c: '#9ca3af', p: null, s: -1 },
+  'cancelled': { l: 'لغو شد',                 c: '#dc2626', p: null, s: -1 }
+};
+var ST_ORDER = ['new', 'quote', 'active', 'revision', 'review', 'done', 'hold', 'cancelled'];
+var STEPS5 = ['ثبت درخواست', 'قیمت و تایید', 'انجام پروژه', 'بازبینی', 'تحویل'];
+function stOf(k){ return ST[k] || ST['new']; }
+function isPast(k){ return k === 'done' || k === 'cancelled'; }
+
+/* ---- parse the message produced by the order form ---- */
+function parseRequest(text){
+  text = String(text || '');
+  var labels = [['service', 'خدمت'], ['details', 'توضیحات'], ['budget', 'بودجه'], ['deadline', 'زمان تحویل'], ['name', 'نام'], ['contact', 'راه تماس']];
+  var found = [];
+  labels.forEach(function(l){
+    var re = new RegExp('(?:^|\\n)[^\\n:]{0,4}' + l[1] + '\\s*:', 'u');
+    var m = re.exec(text);
+    if (m) found.push({ k: l[0], i: m.index, len: m[0].length });
+  });
+  found.sort(function(a, b){ return a.i - b.i; });
+  var out = {};
+  found.forEach(function(f, n){
+    var end = n + 1 < found.length ? found[n + 1].i : text.length;
+    out[f.k] = text.slice(f.i + f.len, end).trim();
+  });
+  if (out.contact) {
+    var m2 = /^(.*?)\s*\(([^)]*)\)\s*$/.exec(out.contact);
+    if (m2) { out.contact = m2[1].trim(); out.channel = m2[2].trim(); }
+  }
+  if (out.budget === 'مشخص نشده') out.budget = '';
+  if (out.deadline === 'مشخص نشده') out.deadline = '';
+  return out;
+}
+
+/* ---- customer-visible projection of an order (internal notes never included) ---- */
+function publicOrder(o){
+  return {
+    n: o.number, s: o.service || '', t: o.title || '', d: o.details || '', b: o.budget || '', dl: o.deadlineNote || '',
+    p: o.price || 0, pd: o.paid || 0, st: o.status || 'new', pr: o.progress || 0, c: o.createdAt || 0, due: o.due || '',
+    u: (o.updates || []).map(function(x){ return { t: x.t, x: x.x }; }),
+    k: (o.links || []).filter(function(x){ return x && x.u; }).map(function(x){ return { l: x.l || x.u, u: x.u }; })
+  };
+}
+/* ==== PURE:END ==== */
+
+/* ==== CORE ==== */
+var FONT = '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&amp;display=swap" rel="stylesheet">';
+var DEFAULT_SITE_URL = 'https://claude.ai/artifact/WwBt73NKT25YPb3hMqaLxc';
+
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+var clone = function(o){ return JSON.parse(JSON.stringify(o)); };
+var uid = function(){ return 'x' + Math.random().toString(36).slice(2, 8); };
+function getP(o, path){ return path.split('.').reduce(function(a, k){ return a == null ? a : a[k]; }, o); }
+function setP(o, path, v){
+  var ks = path.split('.'), last = ks.pop();
+  var t = ks.reduce(function(a, k){ return a[k]; }, o);
+  t[last] = v;
+}
+function hue(str){ var h = 0; for (var i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) % 360; return h; }
+function safeUrl(u){ u = String(u || '').trim(); return /^https?:\/\//i.test(u) ? u : ''; }
+function waNumber(n){ n = fixDigits(n).replace(/\D/g, ''); if (/^09/.test(n)) n = '98' + n.slice(1); return n; }
+function tgUser(u){ return String(u || '').trim().replace(/^https?:\/\/t\.me\//i, '').replace(/^@/, ''); }
+function igUser(u){ return String(u || '').trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@/, '').replace(/\/$/, ''); }
+function hasChannels(d){ var c = d.contact; return !!(waNumber(c.whatsapp) || tgUser(c.telegram) || String(c.email || '').trim()); }
+function orderNum(n){ return numFa(n); }
+
+var DATA = JSON.parse($('#site-data').textContent);
+var PORTAL = JSON.parse($('#portal-data').textContent);
+var draft = null;
+var D = function(){ return draft || DATA; };
+
+var view = 'site';
+var isEditor = false;
+var CAPS = { user: null, artifact: null, db: null, downloads: null, admin: false, ready: false };
+
+var F = { service: '', details: '', budget: '', deadline: '', name: '', contact: '', channel: 'واتساپ', errors: {}, result: null };
+var filter = 'همه';
+
+function setAccent(){ document.documentElement.style.setProperty('--accent', D().accent || '#e8553d'); }
+function toast(msg){
+  var t = $('#toast'); if (!t) return;
+  t.innerHTML = '<span>' + esc(msg) + '</span>';
+  clearTimeout(toast._t); toast._t = setTimeout(function(){ t.innerHTML = ''; }, 3600);
+}
+
+/* ---------- router ---------- */
+function routeFromHash(){
+  var h = location.hash || '';
+  var v = h.indexOf('#/admin') === 0 ? 'admin' : h.indexOf('#/portal') === 0 ? 'portal' : 'site';
+  if (v !== view) { view = v; draw(true); }
+}
+function go(v){
+  try { location.hash = v === 'site' ? '#top' : '#/' + v; } catch (e) {}
+  routeFromHash();
+  if (v !== view) { view = v; draw(true); }
+}
+function draw(top){
+  setAccent();
+  if (view === 'site') renderSite();
+  else if (view === 'portal') renderPortal();
+  else renderAdmin();
+  renderEditor();
+  if (top) window.scrollTo(0, 0);
+}
+
+/* ---------- public site ---------- */
+function slimBar(d, title, right){
+  return '<header class="top vbar"><div class="wrap bar">' +
+    '<a class="brand" href="#top" data-go="site"><span class="logo">' + esc(Array.from(d.brand)[0] || '★') + '</span>' + esc(d.brand) + '</a>' +
+    '<span class="muted" style="font-weight:700">' + esc(title) + '</span><div class="sp">' + (right || '') +
+    '<a class="btn ghost btn-sm" href="#top" data-go="site">← بازگشت به سایت</a></div></div></header>';
+}
+
+function header(d){
+  return '<header class="top"><div class="wrap bar">' +
+    '<a class="brand" href="#top"><span class="logo">' + esc(Array.from(d.brand)[0] || '★') + '</span>' + esc(d.brand) + '</a>' +
+    '<nav class="nav"><a href="#services">خدمات</a><a href="#portfolio">نمونه‌کارها</a><a href="#process">روش کار</a><a href="#faq">سوالات</a></nav>' +
+    '<span style="display:flex;gap:8px;align-items:center">' +
+    (CAPS.admin ? '<a class="btn ghost btn-sm" href="#/admin" data-go="admin">پنل مدیریت</a>' : '') +
+    '<a class="btn ghost btn-sm" href="#/portal" data-go="portal">ورود / پنل مشتریان</a>' +
+    '<a class="btn btn-sm" href="#order">ثبت سفارش</a></span></div></header>' +
+    (draft ? '<div class="edit-banner">حالت ویرایش — تغییرات تا زمان «ذخیره و انتشار» فقط برای شما دیده می‌شود</div>' : '');
+}
+
+function hero(d){
+  var h = d.hero;
+  var cards = d.services.slice(0, 3).map(function(s){
+    return '<div class="mini-card"><div class="ico">' + esc(s.icon) + '</div><div><b>' + esc(s.title) + '</b><small>' + esc(s.price) + '</small></div></div>';
+  }).join('');
+  return '<section class="hero" id="top"><div class="wrap hero-grid"><div>' +
+    '<span class="eyebrow">' + esc(h.eyebrow) + '</span>' +
+    '<h1>' + esc(h.title) + '</h1><p class="lead">' + esc(h.subtitle) + '</p>' +
+    '<div class="cta"><a class="btn" href="#order">همین حالا سفارش بده</a><a class="btn ghost" href="#portfolio">دیدن نمونه‌کارها</a></div>' +
+    '<ul class="badges">' + (h.badges || []).map(function(b){ return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' +
+    '</div><div class="hero-art" aria-hidden="true">' + cards + '</div></div></section>';
+}
+function head(sec){
+  return '<div class="sec-head"><h2>' + esc(sec.t) + '</h2>' + (sec.s ? '<p>' + esc(sec.s) + '</p>' : '') + '</div>';
+}
+function servicesSec(d){
+  var items = d.services.map(function(s){
+    return '<article class="card svc"><div class="ico">' + esc(s.icon) + '</div><h3>' + esc(s.title) + '</h3><p>' + esc(s.desc) + '</p>' +
+      '<div class="svc-foot"><span class="price">' + esc(s.price) + '</span><button class="link" data-act="pick" data-scroll="1" data-id="' + esc(s.id) + '">سفارش این خدمت ←</button></div></article>';
+  }).join('');
+  return '<section class="sec" id="services"><div class="wrap">' + head(d.sections.services) + '<div class="grid3">' + items + '</div></div></section>';
+}
+function workCard(w){
+  var thumb = w.image
+    ? '<img class="thumb" loading="lazy" src="' + esc(w.image) + '" alt="' + esc(w.title) + '">'
+    : '<div class="ph" style="--h:' + hue(w.title || 'x') + '">' + esc(Array.from(w.title || '★')[0]) + '</div>';
+  var link = safeUrl(w.link);
+  return '<article class="card work">' + thumb + '<div class="body">' +
+    (w.category ? '<span class="tag">' + esc(w.category) + '</span>' : '') +
+    '<h3>' + esc(w.title) + '</h3><p>' + esc(w.desc) + '</p>' +
+    (link ? '<a class="link" href="' + esc(link) + '" target="_blank" rel="noopener noreferrer">مشاهده پروژه ↗</a>' : '') +
+    '</div></article>';
+}
+function portfolioGrid(d){
+  var list = d.portfolio.filter(function(w){ return filter === 'همه' || w.category === filter; });
+  return list.length ? list.map(workCard).join('') : '<div class="empty">هنوز نمونه‌کاری در این دسته ثبت نشده است.</div>';
+}
+function portfolioSec(d){
+  var cats = ['همه'];
+  d.portfolio.forEach(function(w){ if (w.category && cats.indexOf(w.category) < 0) cats.push(w.category); });
+  if (cats.indexOf(filter) < 0) filter = 'همه';
+  var chips = cats.length > 2 ? '<div class="chips">' + cats.map(function(c){
+    return '<button class="chip' + (c === filter ? ' on' : '') + '" data-filter="' + esc(c) + '">' + esc(c) + '</button>';
+  }).join('') + '</div>' : '';
+  return '<section class="sec alt" id="portfolio"><div class="wrap">' + head(d.sections.portfolio) + chips +
+    '<div class="grid3" id="pgrid">' + portfolioGrid(d) + '</div></div></section>';
+}
+function processSec(d){
+  return '<section class="sec" id="process"><div class="wrap">' + head(d.sections.process) + '<div class="steps">' +
+    d.steps.map(function(s){ return '<div class="card step"><h3>' + esc(s.title) + '</h3><p>' + esc(s.desc) + '</p></div>'; }).join('') +
+    '</div></div></section>';
+}
+
+function options(arr, val, ph){
+  return '<option value="">' + esc(ph) + '</option>' + (arr || []).map(function(o){
+    return '<option' + (o === val ? ' selected' : '') + '>' + esc(o) + '</option>';
+  }).join('');
+}
+function fieldErr(k){ return F.errors[k] ? '<span class="err">' + esc(F.errors[k]) + '</span>' : ''; }
+
+function orderInner(d){
+  if (F.result) return resultPanel(d);
+  var tiles = d.services.map(function(s){
+    return '<button type="button" class="tile' + (F.service === s.id ? ' on' : '') + '" data-act="pick" data-id="' + esc(s.id) + '"><span class="t-ico">' + esc(s.icon) + '</span>' + esc(s.title) + '</button>';
+  }).join('') + '<button type="button" class="tile' + (F.service === 'other' ? ' on' : '') + '" data-act="pick" data-id="other"><span class="t-ico">💡</span>چیز دیگر</button>';
+  var warn = (CAPS.admin && !hasChannels(d)) ? '<div class="note warn">⚠️ فقط شما این هشدار را می‌بینید: هنوز هیچ راه ارتباطی (واتساپ، تلگرام یا ایمیل) تنظیم نشده. از «ویرایش سایت ← تماس» اضافه کنید تا سفارش‌ها به شما برسد.</div>' : '';
+  return '<form class="card form" data-form novalidate>' + warn +
+    '<fieldset><legend>۱. چه خدمتی لازم داری؟</legend><div class="tiles">' + tiles + '</div>' + fieldErr('service') + '</fieldset>' +
+    '<fieldset><legend>۲. درخواستت را توضیح بده</legend><label class="f"><span>هر چه بیشتر بگویی، قیمت و زمان دقیق‌تر می‌شود</span>' +
+      '<textarea name="details" placeholder="مثلاً: یک لوگو برای کافه‌ای به اسم …، با رنگ‌های گرم و سبک مینیمال">' + esc(F.details) + '</textarea></label>' + fieldErr('details') + '</fieldset>' +
+    '<fieldset><legend>۳. بودجه و زمان</legend><div class="row2">' +
+      '<label class="f"><span>بودجه تقریبی</span><select name="budget">' + options(d.form.budgets, F.budget, 'انتخاب کن (اختیاری)') + '</select></label>' +
+      '<label class="f"><span>زمان تحویل</span><select name="deadline">' + options(d.form.deadlines, F.deadline, 'انتخاب کن (اختیاری)') + '</select></label></div></fieldset>' +
+    '<fieldset><legend>۴. اطلاعات تماس</legend><div class="row2">' +
+      '<label class="f"><span>نام شما</span><input name="name" autocomplete="name" value="' + esc(F.name) + '">' + fieldErr('name') + '</label>' +
+      '<label class="f"><span>شماره تماس یا آیدی</span><input name="contact" dir="ltr" style="text-align:right" value="' + esc(F.contact) + '" placeholder="09… یا @username">' + fieldErr('contact') + '</label></div>' +
+      '<label class="f"><span>ترجیح می‌دهی از چه راهی با تو در تماس باشیم؟</span><select name="channel">' +
+      ['واتساپ', 'تلگرام', 'ایمیل', 'تماس تلفنی'].map(function(c){ return '<option' + (c === F.channel ? ' selected' : '') + '>' + c + '</option>'; }).join('') + '</select></label></fieldset>' +
+    '<button class="btn" type="submit">ثبت درخواست</button></form>';
+}
+function svcTitle(d){
+  if (F.service === 'other') return 'سایر';
+  var s = d.services.filter(function(x){ return x.id === F.service; })[0];
+  return s ? s.title : '—';
+}
+function buildMsg(d){
+  return ['سلام 👋 درخواست جدید از سایت ' + d.brand, '',
+    '🧩 خدمت: ' + svcTitle(d),
+    '📝 توضیحات: ' + F.details.trim(),
+    '💰 بودجه: ' + (F.budget || 'مشخص نشده'),
+    '⏰ زمان تحویل: ' + (F.deadline || 'مشخص نشده'), '',
+    '👤 نام: ' + F.name.trim(),
+    '📞 راه تماس: ' + F.contact.trim() + ' (' + F.channel + ')'].join('\n');
+}
+
+/* shared "send this message to the studio" block */
+function channelBlock(d, msg, subject, afterNote){
+  var c = d.contact, links = '';
+  var wa = waNumber(c.whatsapp), tg = tgUser(c.telegram), em = String(c.email || '').trim();
+  if (wa) links += '<a class="btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + wa + '?text=' + encodeURIComponent(msg) + '">ارسال با واتساپ</a>';
+  if (tg) links += '<a class="btn" data-copyfirst="1" target="_blank" rel="noopener noreferrer" href="https://t.me/' + encodeURIComponent(tg) + '">ارسال با تلگرام</a>';
+  if (em) links += '<a class="btn ghost" href="mailto:' + esc(em) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(msg) + '">ارسال با ایمیل</a>';
+  var hint = tg ? '<div class="note">با دکمه تلگرام، متن به‌صورت خودکار کپی می‌شود؛ کافی است در چت Paste کنی.</div>' : '';
+  var none = links ? '' : '<div class="note warn">راه ارتباطی برای ارسال خودکار تنظیم نشده است. متن زیر را کپی کن و از هر راهی که با ما در تماس هستی برایمان بفرست.</div>';
+  return '<textarea id="msg" readonly rows="8">' + esc(msg) + '</textarea>' + none +
+    (links ? '<div class="chan">' + links + '</div>' : '') + hint + (afterNote || '');
+}
+function resultPanel(d){
+  return '<div class="card result"><div class="ok">✓</div><h3>درخواستت آماده ارسال است</h3>' +
+    '<p>برای اینکه درخواست به دست ما برسد، یکی از روش‌های زیر را بزن. متن آماده‌شده را هم می‌توانی ببینی و کپی کنی.</p>' +
+    channelBlock(d, F.result, 'درخواست جدید: ' + svcTitle(d),
+      '<div class="note">بعد از بررسی، قیمت و زمان را اعلام می‌کنیم و یک <b>کد ورود</b> برای پیگیری مرحله‌ی پروژه در «پنل مشتریان» می‌فرستیم.</div>') +
+    '<div class="irow"><button class="link" data-act="copy">کپی متن</button><button class="link" data-act="again">ثبت درخواست جدید</button></div></div>';
+}
+function orderSec(d){
+  return '<section class="sec" id="order"><div class="wrap">' + head(d.sections.order) + '<div id="order-wrap">' + orderInner(d) + '</div></div></section>';
+}
+function faqSec(d){
+  if (!d.faq.length) return '';
+  return '<section class="sec alt" id="faq"><div class="wrap">' + head(d.sections.faq) + '<div class="faq">' +
+    d.faq.map(function(f){ return '<details><summary>' + esc(f.q) + '</summary><p>' + esc(f.a) + '</p></details>'; }).join('') +
+    '</div></div></section>';
+}
+function footer(d){
+  var c = d.contact, l = [];
+  var wa = waNumber(c.whatsapp), tg = tgUser(c.telegram), em = String(c.email || '').trim(), ig = igUser(c.instagram), ph = String(c.phone || '').trim();
+  if (wa) l.push('<a target="_blank" rel="noopener noreferrer" href="https://wa.me/' + wa + '">واتساپ</a>');
+  if (tg) l.push('<a target="_blank" rel="noopener noreferrer" href="https://t.me/' + encodeURIComponent(tg) + '">تلگرام</a>');
+  if (ig) l.push('<a target="_blank" rel="noopener noreferrer" href="https://instagram.com/' + encodeURIComponent(ig) + '">اینستاگرام</a>');
+  if (em) l.push('<a href="mailto:' + esc(em) + '">' + esc(em) + '</a>');
+  if (ph) l.push('<a href="tel:' + esc(ph.replace(/[^\d+]/g, '')) + '" dir="ltr">' + esc(ph) + '</a>');
+  l.push('<a href="#/portal" data-go="portal">پنل مشتریان</a>');
+  l.push('<a href="#/admin" data-go="admin" style="opacity:.6">ورود مدیر</a>');
+  return '<footer><div class="wrap foot"><span>© ' + esc(d.brand) + '</span><nav>' + l.join('') + '</nav></div></footer>';
+}
+
+function renderSite(){
+  var d = D();
+  document.title = d.brand;
+  $('#app').innerHTML = header(d) + hero(d) + servicesSec(d) + processSec(d) + portfolioSec(d) + orderSec(d) + faqSec(d) + footer(d);
+}
+function renderOrder(){ var w = $('#order-wrap'); if (w) w.innerHTML = orderInner(D()); }
+function render(){ if (view === 'site') renderSite(); }
+
+function copyText(txt, btn){
+  var done = function(){ if (btn) btn.textContent = 'کپی شد ✓'; else toast('کپی شد'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(done, function(){ fallbackCopy(done); });
+  } else fallbackCopy(done);
+}
+function fallbackCopy(done){
+  var ta = $('#msg'); if (!ta) return;
+  ta.focus(); ta.select();
+  try { if (document.execCommand('copy')) done(); } catch (e) {}
+}
+function validate(){
+  var e = {};
+  if (!F.service) e.service = 'لطفاً یک خدمت را انتخاب کن.';
+  if (F.details.trim().length < 10) e.details = 'کمی بیشتر توضیح بده (حداقل چند کلمه).';
+  if (!F.name.trim()) e.name = 'نام را وارد کن.';
+  if (!F.contact.trim()) e.contact = 'راه تماس را وارد کن.';
+  F.errors = e;
+  return !Object.keys(e).length;
+}
+
+/* ==== CUSTOMER PORTAL ==== */
+var sess = null;                 // { code, rec }
+var pTab = 'login';              // login | register
+var pCode = '', pErr = '';
+var REG = { name: '', phone: '', email: '', note: '', errors: {}, result: null };
+
+function portalLive(){ return PORTAL && PORTAL.records && PORTAL.records.length > 0; }
+
+function authHtml(d){
+  var tabs = '<div class="tabs2"><button data-pt="login" class="' + (pTab === 'login' ? 'on' : '') + '">ورود</button>' +
+             '<button data-pt="register" class="' + (pTab === 'register' ? 'on' : '') + '">ثبت‌نام</button></div>';
+  if (pTab === 'register') return '<div class="card auth">' + tabs + regHtml(d) + '</div>';
+  var demo = PORTAL.demoCode
+    ? '<div class="note demo-hint">برای دیدن یک نمونه‌ی آماده از پنل، کد <b class="kbd">' + esc(PORTAL.demoCode) + '</b> را وارد کن.</div>' : '';
+  return '<div class="card auth">' + tabs +
+    '<div><h1>ورود به پنل مشتریان</h1><p class="muted" style="margin-top:6px">کد ورودی که بعد از ثبت سفارش برایت فرستاده‌ایم را وارد کن تا مرحله‌ی پروژه و سفارش‌هایت را ببینی.</p></div>' +
+    '<form data-login novalidate style="display:grid;gap:14px">' +
+      '<label class="f"><span>کد ورود</span><input class="codein" name="code" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XXXX-XXXX-XXXX" value="' + esc(pCode) + '"></label>' +
+      '<div class="err" id="p-err">' + esc(pErr) + '</div>' +
+      '<button class="btn" type="submit" id="p-btn">ورود</button></form>' + demo +
+    '<p class="muted" style="font-size:14px">کد ورود را ندارید؟ اگر قبلاً سفارش داده‌اید، از همان راهی که با ما در تماس بودید درخواست کد کنید؛ اگر مشتری جدید هستید از بخش «ثبت‌نام» استفاده کنید.</p></div>';
+}
+
+function regHtml(d){
+  if (REG.result) {
+    return '<div class="ok">✓</div><h2>درخواست ثبت‌نام آماده ارسال است</h2>' +
+      '<p class="muted">یکی از روش‌های زیر را بزن تا درخواستت به دست ما برسد. بعد از بررسی، کد ورودت را برایت می‌فرستیم.</p>' +
+      channelBlock(d, REG.result, 'درخواست ثبت‌نام در پنل مشتریان') +
+      '<div class="irow"><button class="link" data-act="copy">کپی متن</button><button class="link" data-act="regagain">درخواست جدید</button></div>';
+  }
+  var e = REG.errors;
+  return '<div><h1>ثبت‌نام در پنل مشتریان</h1><p class="muted" style="margin-top:6px">اطلاعاتت را بفرست؛ ما حساب را می‌سازیم و کد ورود را برایت ارسال می‌کنیم.</p></div>' +
+    '<form data-reg novalidate style="display:grid;gap:14px">' +
+    '<label class="f"><span>نام و نام خانوادگی</span><input name="name" autocomplete="name" value="' + esc(REG.name) + '">' + (e.name ? '<span class="err">' + esc(e.name) + '</span>' : '') + '</label>' +
+    '<label class="f"><span>شماره موبایل</span><input name="phone" dir="ltr" style="text-align:right" autocomplete="tel" value="' + esc(REG.phone) + '" placeholder="09…">' + (e.phone ? '<span class="err">' + esc(e.phone) + '</span>' : '') + '</label>' +
+    '<label class="f"><span>ایمیل (اختیاری)</span><input name="email" dir="ltr" style="text-align:right" autocomplete="email" value="' + esc(REG.email) + '"></label>' +
+    '<label class="f"><span>توضیح کوتاه (اختیاری)</span><textarea name="note" style="min-height:80px" placeholder="مثلاً: قبلاً سفارش داده‌ام / می‌خواهم سفارش بدهم">' + esc(REG.note) + '</textarea></label>' +
+    '<button class="btn" type="submit">ارسال درخواست ثبت‌نام</button></form>';
+}
+
+function latestUpdate(o){
+  if (!o.u || !o.u.length) return null;
+  return o.u.slice().sort(function(a, b){ return b.t - a.t; })[0];
+}
+function supportLink(d, o){
+  var c = d.contact, msg = 'سلام، درباره‌ی سفارش ' + orderNum(o.n) + ' (' + o.t + ') سوال دارم.';
+  var wa = waNumber(c.whatsapp), em = String(c.email || '').trim(), tg = tgUser(c.telegram);
+  if (wa) return '<a class="link" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + wa + '?text=' + encodeURIComponent(msg) + '">پیام در واتساپ درباره‌ی این سفارش</a>';
+  if (em) return '<a class="link" href="mailto:' + esc(em) + '?subject=' + encodeURIComponent('سفارش ' + orderNum(o.n)) + '&body=' + encodeURIComponent(msg) + '">ایمیل درباره‌ی این سفارش</a>';
+  if (tg) return '<a class="link" target="_blank" rel="noopener noreferrer" href="https://t.me/' + encodeURIComponent(tg) + '">پیام در تلگرام</a>';
+  return '';
+}
+
+function ordCard(d, o, past){
+  var s = stOf(o.st), step = s.s;
+  var stepper = '';
+  if (!past && step >= 0) {
+    stepper = '<div class="stepper">' + STEPS5.map(function(n, i){
+      return '<div class="stp ' + (i < step ? 'done' : i === step ? 'cur' : '') + '">' + esc(n) + '</div>';
+    }).join('') + '</div>';
+  }
+  var banner = (!past && step < 0) ? '<div class="note" style="margin-top:12px">' + (o.st === 'hold' ? 'این پروژه فعلاً متوقف شده است. برای ادامه با ما در تماس باش.' : '') + '</div>' : '';
+  var late = latestUpdate(o);
+  var remain = Math.max((o.p || 0) - (o.pd || 0), 0);
+  var facts = '<dl class="facts">' +
+    '<div><dt>موعد تحویل</dt><dd>' + (o.due ? dateFa(o.due) : '—') + '</dd></div>' +
+    (o.p ? '<div><dt>مبلغ توافق‌شده</dt><dd>' + money(o.p) + '</dd></div><div><dt>پرداخت‌شده</dt><dd>' + money(o.pd) + '</dd></div><div><dt>مانده</dt><dd>' + (remain ? money(remain) : 'تسویه‌شده ✓') + '</dd></div>' : '') +
+    '</dl>';
+  var tl = (o.u || []).slice().sort(function(a, b){ return b.t - a.t; }).map(function(x){
+    return '<li><time>' + dateTimeFa(x.t) + '</time><p>' + esc(x.x) + '</p></li>';
+  }).join('');
+  var links = (o.k || []).map(function(k){
+    var u = safeUrl(k.u); return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(k.l) + ' ↗</a>' : '';
+  }).join('');
+  return '<article class="card ord' + (past ? ' past' : '') + '">' +
+    '<header><div>' + (o.s ? '<span class="tag">' + esc(o.s) + '</span>' : '') + '<h3>' + esc(o.t) + '</h3>' +
+    '<small>سفارش ' + orderNum(o.n) + ' · ثبت در ' + dateFa(o.c) + '</small></div>' +
+    '<span class="badge" style="--c:' + s.c + '">' + esc(s.l) + '</span></header>' +
+    (past ? '' : '<div class="prog"><div class="bar"><i style="width:' + Math.max(0, Math.min(100, o.pr || 0)) + '%"></i></div><b>' + numFa(o.pr || 0) + '٪</b></div>') +
+    stepper + banner + (past ? '' : facts) +
+    (!past && late ? '<div class="latest"><small>آخرین به‌روزرسانی · ' + dateTimeFa(late.t) + '</small>' + esc(late.x) + '</div>' : '') +
+    '<details><summary>' + (past ? 'جزئیات و تاریخچه' : 'جزئیات کامل و تاریخچه‌ی پروژه') + '</summary>' +
+      (past ? facts : '') +
+      (o.d ? '<div class="det"><b>توضیحات درخواست:</b>\n' + esc(o.d) + '</div>' : '') +
+      (links ? '<div class="lnks">' + links + '</div>' : '') +
+      (tl ? '<ul class="timeline">' + tl + '</ul>' : '<p class="muted">هنوز به‌روزرسانی ثبت نشده است.</p>') +
+      '<div style="margin-top:6px">' + supportLink(d, o) + '</div>' +
+    '</details></article>';
+}
+
+function dashHtml(d){
+  var rec = sess.rec, orders = (rec.orders || []).slice().sort(function(a, b){ return b.c - a.c; });
+  var cur = orders.filter(function(o){ return !isPast(o.st); }), past = orders.filter(function(o){ return isPast(o.st); });
+  var remain = orders.filter(function(o){ return o.st !== 'cancelled'; }).reduce(function(a, o){ return a + Math.max((o.p || 0) - (o.pd || 0), 0); }, 0);
+  var done = orders.filter(function(o){ return o.st === 'done'; }).length;
+  return '<div class="p-head"><div><h1>سلام ' + esc(rec.name) + ' 👋</h1>' +
+    '<p class="muted">آخرین به‌روزرسانی اطلاعات: ' + (PORTAL.publishedAt ? dateTimeFa(PORTAL.publishedAt) : '—') + '</p></div>' +
+    '<div class="irow"><button class="btn btn-sm" data-act="newfromportal">＋ ثبت سفارش جدید</button><button class="btn ghost btn-sm" data-act="logout">خروج</button></div></div>' +
+    '<div class="stats">' +
+      '<div class="card stat"><small>سفارش‌های جاری</small><b>' + numFa(cur.length) + '</b></div>' +
+      '<div class="card stat"><small>پروژه‌های تحویل‌شده</small><b>' + numFa(done) + '</b></div>' +
+      '<div class="card stat"><small>مانده‌ی حساب</small><b>' + (remain ? money(remain) : 'تسویه‌شده') + '</b></div></div>' +
+    '<h2 class="p-sec">سفارش‌های جاری <span>' + numFa(cur.length) + '</span></h2>' +
+    (cur.length ? '<div class="ords">' + cur.map(function(o){ return ordCard(d, o, false); }).join('') + '</div>' : '<div class="empty2">الان سفارش جاری نداری. هر وقت خواستی یک سفارش جدید ثبت کن.</div>') +
+    '<h2 class="p-sec">سفارش‌های قبلی <span>' + numFa(past.length) + '</span></h2>' +
+    (past.length ? '<div class="ords">' + past.map(function(o){ return ordCard(d, o, true); }).join('') + '</div>' : '<div class="empty2">هنوز سفارش قبلی‌ای ثبت نشده است.</div>') +
+    '<div class="card support"><div><b>سوالی داری؟</b><div class="muted">هر وقت لازم بود با ما در تماس باش.</div></div><div class="irow">' + contactBtns(d) + '</div></div>';
+}
+function contactBtns(d){
+  var c = d.contact, out = '';
+  var wa = waNumber(c.whatsapp), tg = tgUser(c.telegram), em = String(c.email || '').trim();
+  if (wa) out += '<a class="btn btn-sm" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + wa + '">واتساپ</a>';
+  if (tg) out += '<a class="btn ghost btn-sm" target="_blank" rel="noopener noreferrer" href="https://t.me/' + encodeURIComponent(tg) + '">تلگرام</a>';
+  if (em) out += '<a class="btn ghost btn-sm" href="mailto:' + esc(em) + '">ایمیل</a>';
+  return out;
+}
+
+function renderPortal(){
+  var d = D();
+  document.title = 'پنل مشتریان | ' + d.brand;
+  $('#app').innerHTML = slimBar(d, 'پنل مشتریان') + '<main class="wrap pwrap">' + (sess ? dashHtml(d) : authHtml(d)) + '</main>' + footer(d);
+}
+
+async function doLogin(){
+  var btn = $('#p-btn'), er = $('#p-err');
+  if (normCode(pCode).length < 6) { pErr = 'کد ورود را وارد کن.'; if (er) er.textContent = pErr; return; }
+  if (btn) { btn.disabled = true; btn.textContent = 'در حال بررسی…'; }
+  var rec = null;
+  try { rec = await openRecord(pCode, PORTAL); } catch (e) { rec = null; }
+  if (!rec) {
+    pErr = portalLive() ? 'کد ورود معتبر نیست. دوباره بررسی کن یا با ما تماس بگیر.' : 'پنل مشتریان هنوز فعال نشده است.';
+    if (btn) { btn.disabled = false; btn.textContent = 'ورود'; }
+    if (er) er.textContent = pErr;
+    return;
+  }
+  sess = { code: normCode(pCode), rec: rec }; pErr = '';
+  try { sessionStorage.setItem('fl_code', sess.code); } catch (e) {}
+  renderPortal(); window.scrollTo(0, 0);
+}
+async function autoLogin(){
+  var c = ''; try { c = sessionStorage.getItem('fl_code') || ''; } catch (e) {}
+  if (!c || sess) return;
+  var rec = null; try { rec = await openRecord(c, PORTAL); } catch (e) {}
+  if (rec) { sess = { code: c, rec: rec }; if (view === 'portal') renderPortal(); }
+}
+function logout(){
+  sess = null; pCode = '';
+  try { sessionStorage.removeItem('fl_code'); } catch (e) {}
+  renderPortal(); window.scrollTo(0, 0);
+}
+
+function submitReg(){
+  var e = {};
+  if (!REG.name.trim()) e.name = 'نام را وارد کن.';
+  if (phoneKey(REG.phone).length < 10) e.phone = 'شماره موبایل را درست وارد کن.';
+  REG.errors = e;
+  if (Object.keys(e).length) { renderPortal(); return; }
+  REG.result = ['سلام 👋 درخواست ثبت‌نام در پنل مشتریان ' + D().brand, '',
+    '👤 نام: ' + REG.name.trim(), '📞 موبایل: ' + REG.phone.trim(),
+    REG.email.trim() ? '✉️ ایمیل: ' + REG.email.trim() : null,
+    REG.note.trim() ? '📝 توضیح: ' + REG.note.trim() : null].filter(function(x){ return x !== null; }).join('\n');
+  renderPortal();
+}
+
+document.addEventListener('input', function(e){
+  var t = e.target; if (!t.closest) return;
+  if (t.closest('[data-login]') && t.name === 'code') { pCode = t.value; return; }
+  if (t.closest('[data-reg]') && t.name in REG) REG[t.name] = t.value;
+});
+document.addEventListener('submit', function(e){
+  if (e.target.matches('[data-login]')) { e.preventDefault(); doLogin(); }
+  else if (e.target.matches('[data-reg]')) { e.preventDefault(); submitReg(); }
+});
+
+/* ==== ADMIN PANEL ==== */
+var adm = { state: 'idle', why: '', tab: 'dash', q: '', sf: 'active', cq: '', customers: [], orders: [], meta: {}, settings: {}, modal: null, busy: false, subscribed: false, pubMsg: '' };
+var DB = null;
+
+function loadCaps(){
+  if (loadCaps.p) return loadCaps.p;
+  loadCaps.p = (async function(){
+    try {
+      if (window.claude && window.claude.use) {
+        var r = await Promise.all([claude.use('user'), claude.use('artifact'), claude.use('db'), claude.use('downloads')]);
+        CAPS.user = r[0]; CAPS.artifact = r[1]; CAPS.db = r[2]; CAPS.downloads = r[3];
+        if (CAPS.user) CAPS.admin = !!(await CAPS.user.canEdit());
+      }
+    } catch (e) {}
+    CAPS.ready = true;
+    isEditor = CAPS.admin && !!CAPS.artifact;
+  })();
+  return loadCaps.p;
+}
+
+async function admEnsure(){
+  await loadCaps();
+  if (!CAPS.user || !CAPS.admin) { adm.state = 'denied'; adm.why = CAPS.user ? 'notadmin' : 'nouser'; if (view === 'admin') renderAdmin(); return; }
+  DB = CAPS.db;
+  if (!DB) { adm.state = 'nodb'; if (view === 'admin') renderAdmin(); return; }
+  if (!adm.subscribed) subscribe();
+  adm.state = 'ready';
+  if (view === 'admin') renderAdmin();
+}
+
+function dbErr(e){
+  var c = e && e.code;
+  toast(c === 'quota_exceeded' ? 'ظرفیت پایگاه داده پر شده است.' : c === 'invalid_argument' ? 'اجازه‌ی ذخیره نداری یا اطلاعات نامعتبر است.' : c === 'resource_exhausted' ? 'درخواست‌ها زیاد است؛ کمی صبر کن.' : 'ذخیره انجام نشد. دوباره امتحان کن.');
+}
+function subscribe(){
+  adm.subscribed = true;
+  var bad = function(e){ dbErr(e); };
+  DB.collection('customers').onSnapshot(function(s){
+    adm.customers = s.docs.map(function(x){ return Object.assign({ id: x.id }, x.data()); }); refreshAdm();
+  }, bad);
+  DB.collection('orders').onSnapshot(function(s){
+    adm.orders = s.docs.map(function(x){ return Object.assign({ id: x.id }, x.data()); }); refreshAdm();
+  }, bad);
+  DB.doc('meta/state').onSnapshot(function(s){ adm.meta = s.exists ? s.data() : {}; refreshAdm(); }, bad);
+  DB.doc('meta/settings').onSnapshot(function(s){ adm.settings = s.exists ? s.data() : {}; refreshAdm(); }, bad);
+}
+function refreshAdm(){
+  if (view !== 'admin' || adm.state !== 'ready') return;
+  clearTimeout(refreshAdm.t); refreshAdm.t = setTimeout(renderAdminBody, 80);
+}
+async function touch(){ await DB.doc('meta/state').set({ dirtyAt: Date.now() }); }
+function isDirty(){ return (adm.meta.dirtyAt || 0) > (PORTAL.publishedAt || 0); }
+function custById(id){ return adm.customers.filter(function(c){ return c.id === id; })[0]; }
+function custName(id){ var c = custById(id); return c ? c.name : 'مشتری حذف‌شده'; }
+function siteUrl(){ return adm.settings.siteUrl || DEFAULT_SITE_URL; }
+function nextNumber(){ return Math.max(1000, Math.max.apply(null, [0].concat(adm.orders.map(function(o){ return o.number || 0; })))) + 1; }
+
+/* ---------- gate ---------- */
+function gateHtml(){
+  var inner;
+  if (adm.state === 'checking' || adm.state === 'idle') inner = '<h1>پنل مدیریت</h1><p class="muted">در حال بررسی دسترسی…</p>';
+  else if (adm.state === 'nodb') inner = '<h1>پنل مدیریت</h1><div class="note warn">پایگاه داده در این نمایش در دسترس نیست. صفحه را از داخل خود claude.ai (با حساب مالک) باز کن.</div>';
+  else inner = '<div class="ok">🔐</div><h1>ورود مدیر</h1>' +
+    '<p>ورود مدیر با <b>حساب claude.ai مالک این سایت</b> انجام می‌شود؛ یعنی همان نام کاربری و رمزی که با آن وارد claude.ai می‌شوی. جای دیگری نام کاربری یا رمز جداگانه‌ای لازم نیست.</p>' +
+    (adm.why === 'nouser'
+      ? '<div class="note warn">الان با حساب claude.ai وارد نشده‌ای (یا از لینک عمومی وارد شده‌ای). لینک سایت را داخل claude.ai و با حساب مالک باز کن.</div>'
+      : '<div class="note warn">این حساب دسترسی مدیریت این سایت را ندارد. با حساب مالک وارد شو.</div>') +
+    '<div class="irow"><button class="btn" data-a="recheck">دوباره بررسی کن</button><a class="btn ghost" href="#top" data-go="site">بازگشت به سایت</a></div>';
+  return '<main class="wrap"><div class="card gate">' + inner + '</div></main>';
+}
+
+/* ---------- shell ---------- */
+var ADM_TABS = [['dash', '📊', 'داشبورد', 'داشبورد'], ['orders', '📋', 'سفارش‌ها', 'سفارش‌ها'], ['customers', '👥', 'مشتریان', 'مشتریان'], ['publish', '🚀', 'انتشار', 'انتشار برای مشتریان'], ['settings', '⚙️', 'تنظیمات', 'تنظیمات']];
+
+function renderAdmin(){
+  var d = D();
+  document.title = 'پنل مدیریت | ' + d.brand;
+  if (adm.state === 'idle') { adm.state = 'checking'; admEnsure(); }
+  if (adm.state !== 'ready') { $('#app').innerHTML = slimBar(d, 'پنل مدیریت') + gateHtml(); return; }
+  $('#app').innerHTML = '<div class="adm"><aside class="adm-side"><a class="brand" href="#top" data-go="site"><span class="logo">' + esc(Array.from(d.brand)[0] || '★') + '</span>' + esc(d.brand) + '</a>' +
+    ADM_TABS.map(function(t){ return '<button class="t" data-a="tab" data-v="' + t[0] + '" id="tab-' + t[0] + '">' + t[1] + ' ' + t[2] + '<i class="dot hide" id="dot-' + t[0] + '"></i></button>'; }).join('') +
+    '<div class="grow"></div><button class="t" data-a="editsite">🖌 ویرایش محتوای سایت</button><button class="t" data-a="tosite">↩ مشاهده‌ی سایت</button></aside>' +
+    '<section class="adm-main"><div class="adm-top"><h1 id="adm-title"></h1><div class="irow" id="adm-actions"></div></div><div id="adm-body"></div></section></div>';
+  renderAdminBody();
+  renderModal();
+}
+
+function renderAdminBody(){
+  if (view !== 'admin' || adm.state !== 'ready' || !$('#adm-body')) return;
+  var t = adm.tab, title = ADM_TABS.filter(function(x){ return x[0] === t; })[0][3], acts = '', body = '';
+  if (t === 'dash') { body = admDash(); acts = '<button class="btn btn-sm" data-a="neworder">＋ سفارش جدید</button><button class="btn ghost btn-sm" data-a="newcust">＋ مشتری جدید</button>'; }
+  if (t === 'orders') {
+    acts = '<button class="btn btn-sm" data-a="neworder">＋ سفارش جدید</button>';
+    body = '<div class="tools"><input id="adm-q" placeholder="جستجو در سفارش‌ها…" value="' + esc(adm.q) + '"><select id="adm-sf">' +
+      '<option value="active"' + (adm.sf === 'active' ? ' selected' : '') + '>سفارش‌های جاری</option><option value="all"' + (adm.sf === 'all' ? ' selected' : '') + '>همه‌ی سفارش‌ها</option>' +
+      ST_ORDER.map(function(k){ return '<option value="' + k + '"' + (adm.sf === k ? ' selected' : '') + '>' + esc(ST[k].l) + '</option>'; }).join('') + '</select></div><div class="rows" id="adm-list">' + admOrdersList() + '</div>';
+  }
+  if (t === 'customers') {
+    acts = '<button class="btn btn-sm" data-a="newcust">＋ مشتری جدید</button>';
+    body = '<div class="tools"><input id="adm-cq" placeholder="جستجوی نام یا شماره…" value="' + esc(adm.cq) + '"></div><div class="rows" id="adm-list">' + admCustList() + '</div>';
+  }
+  if (t === 'publish') body = admPublish();
+  if (t === 'settings') body = admSettings();
+  $('#adm-title').textContent = title;
+  $('#adm-actions').innerHTML = acts;
+  $('#adm-body').innerHTML = body;
+  document.querySelectorAll('.adm-side button.t').forEach(function(b){ b.classList.toggle('on', b.id === 'tab-' + t); });
+  var dot = $('#dot-publish'); if (dot) dot.classList.toggle('hide', !isDirty());
+}
+
+/* ---------- dashboard ---------- */
+function admDash(){
+  var o = adm.orders, cur = o.filter(function(x){ return !isPast(x.status); });
+  if (!o.length && !adm.customers.length) {
+    return '<div class="card panel"><h2>خوش آمدی 👋</h2><p class="muted">هنوز مشتری یا سفارشی ثبت نشده. روند کار این است:</p><ol class="steps-list">' +
+      '<li>مشتری سفارش را از فرم سایت می‌فرستد (واتساپ، تلگرام یا ایمیل).</li>' +
+      '<li>تو از «سفارش جدید» پیام را می‌چسبانی؛ اطلاعات خودکار پر می‌شود و مشتری و کد ورودش ساخته می‌شود.</li>' +
+      '<li>در طول پروژه وضعیت را عوض می‌کنی و به‌روزرسانی می‌نویسی.</li>' +
+      '<li>در تب «انتشار»، اطلاعات را برای مشتری‌ها منتشر می‌کنی تا در پنلشان ببینند.</li></ol>' +
+      '<div class="irow" style="margin-top:14px"><button class="btn" data-a="neworder">＋ اولین سفارش</button></div></div>';
+  }
+  var today = todayIso();
+  var overdue = cur.filter(function(x){ return x.due && x.due < today; });
+  var waiting = o.filter(function(x){ return x.status === 'new'; }).length;
+  var bal = o.filter(function(x){ return x.status !== 'cancelled'; }).reduce(function(a, x){ return a + Math.max((x.price || 0) - (x.paid || 0), 0); }, 0);
+  var recv = o.filter(function(x){ return x.status !== 'cancelled'; }).reduce(function(a, x){ return a + (x.paid || 0); }, 0);
+  var counts = {}; ST_ORDER.forEach(function(k){ counts[k] = 0; }); o.forEach(function(x){ counts[x.status] = (counts[x.status] || 0) + 1; });
+  var mx = Math.max(1, Math.max.apply(null, ST_ORDER.map(function(k){ return counts[k]; })));
+  var recent = o.slice().sort(function(a, b){ return (b.createdAt || 0) - (a.createdAt || 0); }).slice(0, 6);
+  return (isDirty() ? '<div class="alert"><span>⚠️ تغییراتی داری که هنوز برای مشتری‌ها منتشر نشده است.</span><button class="btn btn-sm" data-a="tab" data-v="publish">رفتن به انتشار</button></div>' : '') +
+    '<div class="grid-s">' +
+    '<div class="card kpi"><small>سفارش‌های جاری</small><b>' + numFa(cur.length) + '</b></div>' +
+    '<div class="card kpi' + (waiting ? ' warn' : '') + '"><small>در انتظار قیمت‌گذاری</small><b>' + numFa(waiting) + '</b></div>' +
+    '<div class="card kpi' + (overdue.length ? ' warn' : '') + '"><small>سررسید گذشته</small><b>' + numFa(overdue.length) + '</b></div>' +
+    '<div class="card kpi"><small>مانده‌ی مطالبات</small><b style="font-size:20px">' + money(bal) + '</b></div>' +
+    '<div class="card kpi"><small>دریافتی تا امروز</small><b style="font-size:20px">' + money(recv) + '</b></div>' +
+    '<div class="card kpi"><small>تعداد مشتریان</small><b>' + numFa(adm.customers.length) + '</b></div></div>' +
+    (overdue.length ? '<div class="card panel"><h2>⏰ سررسید گذشته</h2><div class="rows">' + overdue.map(orderRow).join('') + '</div></div>' : '') +
+    '<div class="card panel"><h2>وضعیت سفارش‌ها</h2><div class="dist">' + ST_ORDER.map(function(k){
+      return '<div class="r"><span>' + esc(ST[k].l) + '</span><div class="b"><i style="width:' + (counts[k] / mx * 100) + '%;--c:' + ST[k].c + '"></i></div><b>' + numFa(counts[k]) + '</b></div>';
+    }).join('') + '</div></div>' +
+    '<div class="card panel"><h2>آخرین سفارش‌ها</h2>' + (recent.length ? '<div class="rows">' + recent.map(orderRow).join('') + '</div>' : '<div class="empty2">سفارشی ثبت نشده.</div>') + '</div>';
+}
+
+function orderRow(o){
+  var s = stOf(o.status), over = o.due && o.due < todayIso() && !isPast(o.status);
+  return '<div class="rc" data-a="openorder" data-id="' + esc(o.id) + '"><div class="main"><b>' + esc(o.title || 'بدون عنوان') + '</b>' +
+    '<small>سفارش ' + orderNum(o.number) + ' · ' + esc(custName(o.cid)) + (o.service ? ' · ' + esc(o.service) : '') + '</small><div style="margin-top:4px;display:flex;gap:6px;flex-wrap:wrap">' +
+    (o.due ? '<span class="chipy' + (over ? ' red' : '') + '">تحویل: ' + dateFa(o.due) + '</span>' : '') +
+    (o.price ? '<span class="chipy">' + money(o.price) + (o.paid >= o.price ? ' · تسویه' : ' · مانده ' + money(o.price - (o.paid || 0))) + '</span>' : '') + '</div></div>' +
+    '<div class="side"><span class="badge" style="--c:' + s.c + '">' + esc(s.l) + '</span>' + (isPast(o.status) ? '' : '<div class="prog"><div class="bar"><i style="width:' + (o.progress || 0) + '%"></i></div><b>' + numFa(o.progress || 0) + '٪</b></div>') + '</div></div>';
+}
+function admOrdersList(){
+  var q = fixDigits(adm.q).trim().toLowerCase();
+  var list = adm.orders.filter(function(o){
+    if (adm.sf === 'active' ? isPast(o.status) : (adm.sf !== 'all' && o.status !== adm.sf)) return false;
+    if (!q) return true;
+    return (String(o.number) + ' ' + (o.title || '') + ' ' + (o.service || '') + ' ' + custName(o.cid)).toLowerCase().indexOf(q) >= 0;
+  }).sort(function(a, b){ return (b.createdAt || 0) - (a.createdAt || 0); });
+  return list.length ? list.map(orderRow).join('') : '<div class="empty2">' + (adm.orders.length ? 'سفارشی با این فیلتر پیدا نشد.' : 'هنوز سفارشی ثبت نشده. با «سفارش جدید» شروع کن.') + '</div>';
+}
+function admCustList(){
+  var q = fixDigits(adm.cq).trim().toLowerCase();
+  var list = adm.customers.filter(function(c){
+    return !q || ((c.name || '') + ' ' + fixDigits(c.phone || '') + ' ' + (c.email || '') + ' ' + (c.company || '')).toLowerCase().indexOf(q) >= 0;
+  }).sort(function(a, b){ return (a.name || '').localeCompare(b.name || '', 'fa'); });
+  if (!list.length) return '<div class="empty2">' + (adm.customers.length ? 'مشتری‌ای پیدا نشد.' : 'هنوز مشتری‌ای ثبت نشده.') + '</div>';
+  return list.map(function(c){
+    var os = adm.orders.filter(function(o){ return o.cid === c.id; }), cur = os.filter(function(o){ return !isPast(o.status); }).length;
+    return '<div class="rc" data-a="opencust" data-id="' + esc(c.id) + '"><div class="main"><b>' + esc(c.name) + (c.company ? ' · ' + esc(c.company) : '') + '</b>' +
+      '<small>' + esc(c.phone || '—') + (c.email ? ' · ' + esc(c.email) : '') + '</small></div>' +
+      '<div class="side" style="flex-direction:row;gap:6px;flex-wrap:wrap"><span class="chipy">' + numFa(cur) + ' جاری از ' + numFa(os.length) + ' سفارش</span>' +
+      (c.active === false ? '<span class="chipy red">غیرفعال</span>' : '') + (c.demo ? '<span class="chipy">نمونه</span>' : '') + '</div></div>';
+  }).join('');
+}
+
+/* ---------- publish tab ---------- */
+function admPublish(){
+  var act = adm.customers.filter(function(c){ return c.active !== false && c.code; });
+  var dirty = isDirty();
+  return (dirty ? '<div class="alert"><span>⚠️ تغییراتی داری که هنوز برای مشتری‌ها منتشر نشده است.</span></div>' : '<div class="alert ok"><span>✓ اطلاعاتی که مشتری‌ها می‌بینند با آخرین تغییراتت یکی است.</span></div>') +
+    '<div class="card panel"><h2>انتشار اطلاعات پنل مشتریان</h2>' +
+    '<p class="muted">آخرین انتشار: <b>' + (PORTAL.publishedAt ? dateTimeFa(PORTAL.publishedAt) : 'هنوز منتشر نشده') + '</b> · مشتریان فعال در بسته‌ی فعلی: <b>' + numFa((PORTAL.records || []).length) + '</b></p>' +
+    '<ol class="steps-list"><li>اطلاعات هر مشتری با «کد ورود» خودش <b>رمزگذاری</b> می‌شود؛ فقط کسی که آن کد را دارد می‌تواند اطلاعات همان مشتری را ببیند.</li>' +
+    '<li>یادداشت‌های داخلی، کد سایر مشتریان و اطلاعات سایرین هرگز وارد بسته‌ی منتشرشده نمی‌شود.</li>' +
+    '<li>بعد از انتشار، صفحه یک بار دوباره بارگذاری می‌شود؛ مشتری‌ها با باز کردن دوباره‌ی سایت آخرین وضعیت را می‌بینند.</li></ol>' +
+    '<div class="irow" style="margin-top:16px"><button class="btn" data-a="publish" id="pub-btn">انتشار برای ' + numFa(act.length) + ' مشتری فعال</button><span class="hint2" id="pub-msg">' + esc(adm.pubMsg) + '</span></div></div>' +
+    '<div class="card panel"><h2>مشتریانی که در این انتشار قرار می‌گیرند</h2>' + (act.length ? '<div class="rows">' + act.map(function(c){
+      var n = adm.orders.filter(function(o){ return o.cid === c.id; }).length;
+      return '<div class="rc" data-a="opencust" data-id="' + esc(c.id) + '"><div class="main"><b>' + esc(c.name) + '</b><small>' + numFa(n) + ' سفارش</small></div><div class="side"><span class="chipy">دارای کد ورود</span></div></div>';
+    }).join('') + '</div>' : '<div class="empty2">مشتری فعالی وجود ندارد.</div>') + '</div>';
+}
+
+async function publishPortal(){
+  if (adm.busy) return;
+  if (!CAPS.artifact) { toast('انتشار در این نمایش ممکن نیست.'); return; }
+  if ($('#app-js').textContent.indexOf('function buildDoc') < 0) { toast('انتشار در این نمایش ممکن نیست.'); return; }
+  adm.busy = true;
+  var btn = $('#pub-btn'), msg = function(t){ adm.pubMsg = t; var el = $('#pub-msg'); if (el) el.textContent = t; };
+  if (btn) btn.disabled = true;
+  try {
+    var salt = PORTAL.salt ? b64d(PORTAL.salt) : crypto.getRandomValues(new Uint8Array(16));
+    var act = adm.customers.filter(function(c){ return c.active !== false && c.code; }), recs = [];
+    for (var i = 0; i < act.length; i++) {
+      msg('در حال رمزگذاری ' + numFa(i + 1) + ' از ' + numFa(act.length) + '…');
+      var c = act[i];
+      var os = adm.orders.filter(function(o){ return o.cid === c.id; }).sort(function(a, b){ return (b.createdAt || 0) - (a.createdAt || 0); }).map(publicOrder);
+      recs.push(await sealRecord(c.code, salt, { name: c.name, phone: c.phone || '', orders: os }));
+    }
+    recs.sort(function(a, b){ return a.i < b.i ? -1 : 1; });
+    var demo = adm.customers.filter(function(c){ return c.demo && c.active !== false && c.code; })[0];
+    var portal = { v: 1, salt: b64e(salt), publishedAt: Date.now(), demoCode: demo ? demo.code : '', records: recs };
+    msg('در حال انتشار…');
+    await CAPS.artifact.publish(buildDoc(DATA, portal));
+    msg('منتشر شد؛ صفحه دوباره بارگذاری می‌شود…');
+  } catch (e) {
+    var c2 = e && e.code;
+    msg(c2 === 'conflict' ? 'نسخه‌ی جدیدتری منتشر شده بود؛ صفحه دوباره بارگذاری می‌شود.' : c2 === 'too_large' ? 'حجم اطلاعات زیاد است.' : c2 === 'rate_limited' ? 'کمی صبر کن و دوباره امتحان کن.' : 'انتشار انجام نشد (' + (c2 || 'خطا') + ').');
+    adm.busy = false; if (btn) btn.disabled = false;
+  }
+}
+
+/* ---------- settings tab ---------- */
+function admSettings(){
+  return '<div class="card panel"><h2>آدرس سایت</h2><p class="muted">این آدرس در پیامِ «کد ورود» برای مشتری‌ها استفاده می‌شود. وقتی سایت را عمومی کردی، لینک عمومی را اینجا بگذار.</p>' +
+    '<div class="irow" style="margin-top:10px"><input data-s="siteUrl" dir="ltr" style="flex:1;min-width:240px;text-align:right" value="' + esc(siteUrl()) + '"><button class="btn btn-sm" data-a="savesettings">ذخیره</button></div></div>' +
+    '<div class="card panel"><h2>پشتیبان‌گیری</h2><p class="muted">همه‌ی مشتریان، سفارش‌ها و کدها را در یک فایل ذخیره کن. اگر روزی داده‌ها پاک شد یا خواستی جابه‌جا کنی، از همین فایل بازیابی می‌شود. فایل را جای امن نگه دار؛ کدهای ورود مشتری‌ها داخل آن است.</p>' +
+    '<div class="irow" style="margin-top:10px"><button class="btn btn-sm" data-a="export">دریافت فایل پشتیبان</button>' +
+    '<label class="btn ghost btn-sm" style="cursor:pointer">بازیابی از فایل<input type="file" accept=".json,application/json" hidden data-import></label></div></div>' +
+    '<div class="card panel"><h2>امنیت و ورود</h2><ul class="steps-list">' +
+    '<li><b>مدیر:</b> ورود با حساب claude.ai مالک سایت. این ورودِ واقعی و امن است و نیازی به رمز جداگانه نیست.</li>' +
+    '<li><b>مشتری:</b> با «کد ورود» اختصاصی (۱۲ حرفی تصادفی) که برای هر مشتری ساخته می‌شود؛ مثل رمز عبور است.</li>' +
+    '<li>اگر کد مشتری لو رفت، در صفحه‌ی همان مشتری «ساخت کد جدید» را بزن و دوباره منتشر کن؛ کد قبلی از کار می‌افتد.</li>' +
+    '<li>مشتری فقط اطلاعات خودش را می‌بیند و اطلاعات بقیه برای او غیرقابل خواندن است.</li></ul></div>';
+}
+
+/* ---------- modals ---------- */
+function closeModal(){ adm.modal = null; renderModal(); }
+function opt(v, label, sel){ return '<option value="' + esc(v) + '"' + (sel ? ' selected' : '') + '>' + esc(label) + '</option>'; }
+function fm(label, path, o){
+  o = o || {};
+  var m = adm.modal, v = path[0] === '@' ? m[path.slice(1)] : getP(path.indexOf('newCust.') === 0 ? m : m.d, path);
+  var at = 'data-m="' + path + '"' + (o.num ? ' data-num="1"' : '');
+  var ctl = o.area
+    ? '<textarea ' + at + ' rows="' + (o.rows || 3) + '" style="min-height:0"' + (o.ph ? ' placeholder="' + esc(o.ph) + '"' : '') + '>' + esc(v == null ? '' : v) + '</textarea>'
+    : '<input ' + at + (o.num ? ' inputmode="numeric"' : '') + (o.ltr ? ' dir="ltr" style="text-align:right"' : '') + (o.ph ? ' placeholder="' + esc(o.ph) + '"' : '') + ' value="' + esc(v == null ? '' : v) + '">';
+  return '<label class="f"><span>' + label + '</span>' + ctl + (o.hint ? '<small class="hint2">' + o.hint + '</small>' : '') + '</label>';
+}
+
+function renderModal(){
+  var root = $('#modal'); if (!root) return;
+  var m = adm.modal;
+  if (!m || view !== 'admin') { root.innerHTML = ''; return; }
+  var st = $('.mbox') ? $('.mbox').scrollTop : 0;
+  root.innerHTML = m.type === 'order' ? orderModal() : m.type === 'cust' ? custModal() : m.type === 'import' ? importModal() : '';
+  if ($('.mbox')) $('.mbox').scrollTop = st;
+}
+
+function openOrder(id, preset){
+  var found = id ? adm.orders.filter(function(o){ return o.id === id; })[0] : null;
+  var base = found ? clone(found) : { cid: '', number: nextNumber(), service: '', title: '', details: '', budget: '', deadlineNote: '', price: 0, paid: 0, status: 'new', progress: 10, createdAt: Date.now(), due: '', note: '', updates: [], links: [] };
+  base.updates = base.updates || []; base.links = base.links || [];
+  if (preset) Object.assign(base, preset);
+  adm.modal = { type: 'order', id: id, isNew: !found, d: base, orig: found ? clone(found) : null, newCust: { name: '', phone: '', email: '', note: '' }, dueText: isoToJalInput(base.due), paste: '', newUpdate: '', err: '', confirmDel: false, progTouched: !!found, saving: false };
+  renderModal();
+}
+
+function orderModal(){
+  var m = adm.modal, d = m.d, sorted = adm.customers.slice().sort(function(a, b){ return (a.name || '').localeCompare(b.name || '', 'fa'); });
+  var svcs = D().services.map(function(s){ return s.title; });
+  if (d.service && svcs.indexOf(d.service) < 0 && d.service !== 'سایر') svcs.push(d.service);
+  svcs.push('سایر');
+  var custNew = d.cid === '__new'
+    ? '<div class="f2" style="background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px">' + fm('نام مشتری جدید', 'newCust.name') + fm('شماره موبایل', 'newCust.phone', { ltr: 1 }) + fm('ایمیل (اختیاری)', 'newCust.email', { ltr: 1 }) + fm('یادداشت داخلی (اختیاری)', 'newCust.note') + '</div>' : '';
+  var upd = d.updates.map(function(u, i){
+    return '<div class="it"><div><time>' + dateTimeFa(u.t) + (u.auto ? ' · خودکار' : '') + '</time><p>' + esc(u.x) + '</p></div><button class="mini danger" data-a="delupd" data-i="' + i + '">حذف</button></div>';
+  }).join('');
+  var lnk = d.links.map(function(l, i){
+    return '<div class="lk"><input data-m="links.' + i + '.l" placeholder="عنوان (مثلاً فایل نهایی)" value="' + esc(l.l || '') + '"><input data-m="links.' + i + '.u" dir="ltr" style="text-align:right" placeholder="https://…" value="' + esc(l.u || '') + '"><button class="mini danger" data-a="dellink" data-i="' + i + '">حذف</button></div>';
+  }).join('');
+  return '<div class="modal"><div class="mbox" role="dialog" aria-label="سفارش">' +
+    '<div class="mhead"><h2>' + (m.isNew ? 'سفارش جدید' : 'سفارش ' + orderNum(d.number)) + '</h2><button class="mini" data-a="closem">✕ بستن</button></div><div class="mbody">' +
+    (m.err ? '<div class="note warn">' + esc(m.err) + '</div>' : '') +
+    (m.isNew ? '<div><div class="sub">چسباندن پیام مشتری (اختیاری)</div><label class="f" style="margin-top:8px"><span>پیامی که از فرم سایت دریافت کرده‌ای را اینجا بچسبان تا فیلدها خودکار پر شود</span><textarea data-m="@paste" rows="4" style="min-height:0">' + esc(m.paste) + '</textarea></label><div style="margin-top:8px"><button class="btn ghost btn-sm" data-a="parsepaste">پر کردن خودکار</button></div></div>' : '') +
+    '<div class="sub">مشتری و پروژه</div>' +
+    '<label class="f"><span>مشتری</span><select data-m="cid">' + opt('', 'انتخاب کن…', !d.cid) + sorted.map(function(c){ return opt(c.id, c.name + (c.phone ? ' · ' + c.phone : ''), d.cid === c.id); }).join('') + opt('__new', '＋ مشتری جدید…', d.cid === '__new') + '</select></label>' + custNew +
+    '<div class="f2"><label class="f"><span>خدمت</span><select data-m="service">' + opt('', 'انتخاب کن…', !d.service) + svcs.map(function(s){ return opt(s, s, d.service === s); }).join('') + '</select></label>' + fm('عنوان پروژه', 'title', { ph: 'مثلاً: طراحی لوگوی کافه' }) + '</div>' +
+    fm('توضیحات درخواست', 'details', { area: 1, rows: 4 }) +
+    '<div class="f2">' + fm('بودجه‌ی اعلام‌شده توسط مشتری', 'budget') + fm('زمان درخواستی مشتری', 'deadlineNote') + '</div>' +
+    '<div class="sub">وضعیت و زمان‌بندی</div>' +
+    '<div class="f2"><label class="f"><span>وضعیت پروژه</span><select data-m="status">' + ST_ORDER.map(function(k){ return opt(k, ST[k].l, d.status === k); }).join('') + '</select></label>' +
+    fm('موعد تحویل (شمسی)', '@dueText', { ltr: 1, ph: '۱۴۰۵/۰۸/۲۵', hint: 'به شکل سال/ماه/روز؛ خالی = بدون موعد' }) + '</div>' +
+    '<label class="f"><span>درصد پیشرفت: <b id="pv">' + numFa(d.progress) + '٪</b></span><input type="range" min="0" max="100" step="5" data-m="progress" data-num="1" data-range="1" value="' + (d.progress || 0) + '"></label>' +
+    '<div class="sub">مالی (تومان)</div><div class="f2">' + fm('مبلغ توافق‌شده', 'price', { num: 1, ph: '0' }) + fm('مبلغ دریافت‌شده', 'paid', { num: 1, ph: '0' }) + '</div>' +
+    '<div class="sub">یادداشت داخلی (فقط برای تو)</div>' + fm('این متن هرگز برای مشتری منتشر نمی‌شود', 'note', { area: 1, rows: 2 }) +
+    '<div class="sub">به‌روزرسانی‌های پروژه (مشتری می‌بیند)</div>' + (upd ? '<div class="ul-edit">' + upd + '</div>' : '<p class="hint2">هنوز به‌روزرسانی‌ای ثبت نشده.</p>') +
+    '<label class="f"><span>یک به‌روزرسانی جدید بنویس</span><textarea data-m="@newUpdate" rows="2" style="min-height:0" placeholder="مثلاً: پیش‌نویس اول لوگو آماده شد و برای بازبینی ارسال می‌شود.">' + esc(m.newUpdate) + '</textarea></label><div><button class="btn ghost btn-sm" data-a="addupd">افزودن به‌روزرسانی</button></div>' +
+    '<div class="sub">لینک‌ها و فایل‌های تحویلی (مشتری می‌بیند)</div>' + (lnk ? '<div class="ul-edit">' + lnk + '</div>' : '') + '<div><button class="btn ghost btn-sm" data-a="addlink">＋ افزودن لینک</button></div>' +
+    '</div><div class="mfoot"><div class="l"><button class="btn" data-a="saveorder"' + (m.saving ? ' disabled' : '') + '>' + (m.saving ? 'در حال ذخیره…' : 'ذخیره') + '</button><button class="btn ghost" data-a="closem">انصراف</button></div>' +
+    (m.isNew ? '' : '<button class="btn ' + (m.confirmDel ? 'danger' : 'ghost') + '" data-a="delorder">' + (m.confirmDel ? 'مطمئنی؟ حذف قطعی' : 'حذف سفارش') + '</button>') + '</div></div></div>';
+}
+
+function setM(path, val, isNum){
+  var m = adm.modal;
+  if (path[0] === '@') m[path.slice(1)] = val;
+  else if (path.indexOf('newCust.') === 0) setP(m, path, val);
+  else setP(m.d, path, isNum ? (parseInt(fixDigits(val).replace(/[^\d]/g, ''), 10) || 0) : val);
+}
+
+function matchService(name){
+  var s = D().services.map(function(x){ return x.title; });
+  name = String(name || '').trim();
+  return s.indexOf(name) >= 0 ? name : (name ? name : '');
+}
+function applyPaste(){
+  var m = adm.modal, d = m.d, p = parseRequest(m.paste);
+  if (!p.service && !p.details && !p.name) { toast('این متن شبیه پیام فرم سفارش نیست.'); return; }
+  d.service = matchService(p.service); if (!d.title) d.title = p.service || '';
+  if (p.details) d.details = p.details;
+  d.budget = p.budget || ''; d.deadlineNote = p.deadline || '';
+  var contact = (p.contact || '').trim(), isMail = /@.+\./.test(contact), isPhone = phoneKey(contact).length >= 10 && !isMail;
+  var key = isPhone ? phoneKey(contact) : '';
+  var found = key ? adm.customers.filter(function(c){ return phoneKey(c.phone) === key; })[0] : null;
+  if (found) { d.cid = found.id; }
+  else if (p.name) {
+    d.cid = '__new';
+    m.newCust = { name: p.name, phone: isPhone ? contact : '', email: isMail ? contact : '', note: (!isPhone && !isMail && contact) ? 'راه تماس: ' + contact + (p.channel ? ' (' + p.channel + ')' : '') : '' };
+  }
+  renderModal(); toast('اطلاعات پر شد؛ بررسی کن و ذخیره بزن.');
+}
+
+async function saveOrder(){
+  var m = adm.modal, d = m.d;
+  if (m.saving) return;
+  var fail = function(t){ m.err = t; renderModal(); var b = $('.mbox'); if (b) b.scrollTop = 0; };
+  if (!d.cid) return fail('مشتری را انتخاب کن.');
+  if (d.cid === '__new' && !String(m.newCust.name).trim()) return fail('نام مشتری جدید را وارد کن.');
+  if (!String(d.title).trim()) return fail('عنوان پروژه را وارد کن.');
+  var due = parseJalInput(m.dueText);
+  if (due === null) return fail('موعد تحویل را به شکل ۱۴۰۵/۰۸/۲۵ وارد کن.');
+  d.due = due; m.err = ''; m.saving = true; renderModal();
+  try {
+    if (d.cid === '__new') {
+      var cref = DB.collection('customers').doc();
+      await cref.set({ name: m.newCust.name.trim(), phone: m.newCust.phone.trim(), email: m.newCust.email.trim(), company: '', note: m.newCust.note.trim(), code: genCode(), active: true, createdAt: Date.now() });
+      d.cid = cref.id;
+    }
+    if (!m.orig) d.updates.unshift({ t: d.createdAt, x: 'سفارش شما ثبت شد.', auto: true });
+    else if (m.orig.status !== d.status) d.updates.push({ t: Date.now(), x: 'وضعیت پروژه به «' + stOf(d.status).l + '» تغییر کرد.', auto: true });
+    var id = m.id || DB.collection('orders').doc().id, data = clone(d); delete data.id;
+    await DB.doc('orders/' + id).set(data);
+    await touch();
+    adm.modal = null; renderModal(); toast('سفارش ذخیره شد. برای دیدن مشتری، در تب «انتشار» منتشر کن.');
+  } catch (e) { m.saving = false; renderModal(); dbErr(e); }
+}
+async function deleteOrder(){
+  var m = adm.modal;
+  if (!m.confirmDel) { m.confirmDel = true; renderModal(); return; }
+  try { await DB.doc('orders/' + m.id).delete(); await touch(); adm.modal = null; renderModal(); toast('سفارش حذف شد.'); } catch (e) { dbErr(e); }
+}
+
+/* customer modal */
+function openCust(id, isNew){
+  var found = id ? custById(id) : null;
+  var base = found ? clone(found) : { name: '', phone: '', email: '', company: '', note: '', code: genCode(), active: true, createdAt: Date.now() };
+  adm.modal = { type: 'cust', id: id, isNew: !found, d: base, err: '', confirmDel: false, confirmRegen: false, saving: false };
+  renderModal();
+}
+function loginMsg(c){
+  return 'سلام ' + (c.name || '') + ' عزیز 🌟\nحساب تو در «پنل مشتریان ' + D().brand + '» ساخته شد.\nبا این لینک وارد سایت شو و بالای صفحه روی «ورود / پنل مشتریان» بزن:\n' + siteUrl() + '\n\n🔑 کد ورود تو: ' + c.code + '\n\nبا این کد می‌توانی مرحله‌ی پروژه‌هایت را ببینی. این کد مثل رمز عبور است؛ آن را برای کسی نفرست.';
+}
+function custModal(){
+  var m = adm.modal, d = m.d, msg = loginMsg(d), phone = waNumber(d.phone);
+  var os = m.id ? adm.orders.filter(function(o){ return o.cid === m.id; }).sort(function(a, b){ return (b.createdAt || 0) - (a.createdAt || 0); }) : [];
+  return '<div class="modal"><div class="mbox" role="dialog" aria-label="مشتری">' +
+    '<div class="mhead"><h2>' + (m.isNew ? 'مشتری جدید' : esc(d.name)) + '</h2><button class="mini" data-a="closem">✕ بستن</button></div><div class="mbody">' +
+    (m.err ? '<div class="note warn">' + esc(m.err) + '</div>' : '') +
+    '<div class="f2">' + fm('نام و نام خانوادگی', 'name') + fm('شماره موبایل', 'phone', { ltr: 1 }) + fm('ایمیل', 'email', { ltr: 1 }) + fm('شرکت / برند (اختیاری)', 'company') + '</div>' +
+    fm('یادداشت داخلی (فقط برای تو)', 'note', { area: 1, rows: 2 }) +
+    '<label class="chk"><input type="checkbox" data-m="active"' + (d.active !== false ? ' checked' : '') + '> فعال (در پنل مشتریان منتشر شود)</label>' +
+    '<div class="sub">کد ورود مشتری</div><div class="codebox"><span class="kbd">' + esc(d.code) + '</span><button class="mini" data-a="copycode">کپی کد</button>' +
+    '<button class="mini' + (m.confirmRegen ? ' danger' : '') + '" data-a="regen">' + (m.confirmRegen ? 'مطمئنی؟ کد قبلی باطل می‌شود' : 'ساخت کد جدید') + '</button></div>' +
+    '<div class="sub">پیام ارسال کد به مشتری</div><div class="pre">' + esc(msg) + '</div>' +
+    '<div class="irow"><button class="btn ghost btn-sm" data-a="copymsg">کپی پیام</button>' + (phone ? '<a class="btn btn-sm" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + phone + '?text=' + encodeURIComponent(msg) + '">ارسال با واتساپ</a>' : '') + '</div>' +
+    '<p class="hint2">کد فقط بعد از «انتشار» در تب انتشار برای مشتری کار می‌کند.' + (m.isNew ? ' برای این مشتری بعد از ذخیره، یک سفارش هم ثبت کن.' : '') + '</p>' +
+    (m.isNew ? '' : '<div class="sub">سفارش‌های این مشتری (' + numFa(os.length) + ')</div>' + (os.length ? '<div class="rows">' + os.map(orderRow).join('') + '</div>' : '<p class="hint2">سفارشی ندارد.</p>') + '<div><button class="btn ghost btn-sm" data-a="neworderfor" data-id="' + esc(m.id) + '">＋ سفارش جدید برای این مشتری</button></div>') +
+    '</div><div class="mfoot"><div class="l"><button class="btn" data-a="savecust"' + (m.saving ? ' disabled' : '') + '>' + (m.saving ? 'در حال ذخیره…' : 'ذخیره') + '</button><button class="btn ghost" data-a="closem">انصراف</button></div>' +
+    (m.isNew ? '' : '<button class="btn ' + (m.confirmDel ? 'danger' : 'ghost') + '" data-a="delcust">' + (m.confirmDel ? 'مطمئنی؟ مشتری و سفارش‌هایش حذف شود' : 'حذف مشتری') + '</button>') + '</div></div></div>';
+}
+async function saveCust(){
+  var m = adm.modal, d = m.d;
+  if (m.saving) return;
+  if (!String(d.name).trim()) { m.err = 'نام مشتری را وارد کن.'; renderModal(); return; }
+  m.saving = true; m.err = ''; renderModal();
+  try {
+    var id = m.id || DB.collection('customers').doc().id, data = clone(d); delete data.id;
+    await DB.doc('customers/' + id).set(data); await touch();
+    adm.modal = null; renderModal(); toast('مشتری ذخیره شد.');
+  } catch (e) { m.saving = false; renderModal(); dbErr(e); }
+}
+async function deleteCust(){
+  var m = adm.modal;
+  if (!m.confirmDel) { m.confirmDel = true; renderModal(); return; }
+  try {
+    var os = adm.orders.filter(function(o){ return o.cid === m.id; });
+    for (var i = 0; i < os.length; i++) await DB.doc('orders/' + os[i].id).delete();
+    await DB.doc('customers/' + m.id).delete(); await touch();
+    adm.modal = null; renderModal(); toast('مشتری حذف شد.');
+  } catch (e) { dbErr(e); }
+}
+
+/* backup */
+function exportAll(){
+  var data = JSON.stringify({ app: 'freelance-portal', v: 1, exportedAt: Date.now(), customers: adm.customers, orders: adm.orders, settings: adm.settings }, null, 1);
+  if (CAPS.downloads) {
+    CAPS.downloads.save({ filename: 'portal-backup-' + todayIso() + '.json', data: data }).then(function(){ toast('فایل پشتیبان ذخیره شد.'); }, function(e){ if (!e || e.code !== 'declined') toast('ذخیره‌ی فایل ممکن نشد.'); });
+  } else { toast('دریافت فایل در این نمایش ممکن نیست.'); }
+}
+function importModal(){
+  var m = adm.modal;
+  return '<div class="modal"><div class="mbox"><div class="mhead"><h2>بازیابی از فایل پشتیبان</h2><button class="mini" data-a="closem">✕ بستن</button></div><div class="mbody">' +
+    '<p>در این فایل <b>' + numFa(m.data.customers.length) + '</b> مشتری و <b>' + numFa(m.data.orders.length) + '</b> سفارش پیدا شد. اطلاعات هم‌شناسه با موارد فعلی جایگزین می‌شود و بقیه اضافه می‌شود.</p>' +
+    '<div id="imp-msg" class="hint2"></div></div><div class="mfoot"><div class="l"><button class="btn" data-a="doimport">بازیابی</button><button class="btn ghost" data-a="closem">انصراف</button></div></div></div></div>';
+}
+async function doImport(){
+  var m = adm.modal, all = [], msg = function(t){ var e = $('#imp-msg'); if (e) e.textContent = t; };
+  m.data.customers.forEach(function(c){ var x = clone(c), id = x.id; delete x.id; all.push(['customers/' + id, x]); });
+  m.data.orders.forEach(function(o){ var x = clone(o), id = x.id; delete x.id; all.push(['orders/' + id, x]); });
+  try {
+    for (var i = 0; i < all.length; i++) { msg('در حال بازیابی ' + numFa(i + 1) + ' از ' + numFa(all.length) + '…'); await DB.doc(all[i][0]).set(all[i][1]); }
+    await touch(); adm.modal = null; renderModal(); toast('بازیابی انجام شد.');
+  } catch (e) { dbErr(e); }
+}
+
+/* ---------- events ---------- */
+document.addEventListener('input', function(e){
+  var t = e.target;
+  if (t.id === 'adm-q') { adm.q = t.value; var l = $('#adm-list'); if (l) l.innerHTML = admOrdersList(); return; }
+  if (t.id === 'adm-cq') { adm.cq = t.value; var l2 = $('#adm-list'); if (l2) l2.innerHTML = admCustList(); return; }
+  if (t.id === 'adm-sf') { adm.sf = t.value; var l3 = $('#adm-list'); if (l3) l3.innerHTML = admOrdersList(); return; }
+  if (t.dataset && t.dataset.s) { adm.settings = Object.assign({}, adm.settings, (function(o){ o[t.dataset.s] = t.value; return o; })({})); return; }
+  if (!adm.modal || !t.dataset || !t.dataset.m) return;
+  var path = t.dataset.m, val = t.type === 'checkbox' ? t.checked : t.value, m = adm.modal;
+  if (m.type === 'cust') { setP(m.d, path, val); return; }
+  setM(path, val, !!t.dataset.num);
+  if (t.dataset.range) { m.progTouched = true; var pv = $('#pv'); if (pv) pv.textContent = numFa(m.d.progress) + '٪'; }
+  if (path === 'cid') renderModal();
+  if (path === 'status') { if (!m.progTouched && stOf(val).p != null) m.d.progress = stOf(val).p; renderModal(); }
+});
+document.addEventListener('change', function(e){
+  var t = e.target;
+  if (t.dataset && t.dataset.import != null && t.files && t.files[0]) {
+    var fr = new FileReader();
+    fr.onload = function(){
+      try {
+        var j = JSON.parse(fr.result);
+        if (!j || j.app !== 'freelance-portal' || !Array.isArray(j.customers) || !Array.isArray(j.orders)) throw 0;
+        adm.modal = { type: 'import', data: j }; renderModal();
+      } catch (x) { toast('این فایل، پشتیبانِ معتبر نیست.'); }
+    };
+    fr.readAsText(t.files[0]); t.value = '';
+  }
+});
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && adm.modal && view === 'admin') closeModal(); });
+
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-a]'); if (!t) return;
+  var a = t.dataset.a, id = t.dataset.id, v = t.dataset.v, i = +t.dataset.i, m = adm.modal;
+  if (a === 'tab') { adm.tab = v; renderAdminBody(); window.scrollTo(0, 0); }
+  else if (a === 'recheck') { adm.state = 'idle'; renderAdmin(); }
+  else if (a === 'tosite') go('site');
+  else if (a === 'editsite') { go('site'); startEdit(); }
+  else if (a === 'neworder') openOrder(null);
+  else if (a === 'neworderfor') { adm.modal = null; openOrder(null, { cid: id }); }
+  else if (a === 'newcust') openCust(null);
+  else if (a === 'openorder') { adm.modal = null; openOrder(id); }
+  else if (a === 'opencust') { adm.modal = null; openCust(id); }
+  else if (a === 'closem') closeModal();
+  else if (a === 'parsepaste') applyPaste();
+  else if (a === 'addupd') { if (m.newUpdate.trim()) { m.d.updates.push({ t: Date.now(), x: m.newUpdate.trim() }); m.newUpdate = ''; renderModal(); } }
+  else if (a === 'delupd') { m.d.updates.splice(i, 1); renderModal(); }
+  else if (a === 'addlink') { m.d.links.push({ l: '', u: '' }); renderModal(); }
+  else if (a === 'dellink') { m.d.links.splice(i, 1); renderModal(); }
+  else if (a === 'saveorder') saveOrder();
+  else if (a === 'delorder') deleteOrder();
+  else if (a === 'savecust') saveCust();
+  else if (a === 'delcust') deleteCust();
+  else if (a === 'copycode') copyText(m.d.code);
+  else if (a === 'copymsg') copyText(loginMsg(m.d));
+  else if (a === 'regen') { if (!m.confirmRegen) { m.confirmRegen = true; renderModal(); } else { m.d.code = genCode(); m.confirmRegen = false; renderModal(); toast('کد جدید ساخته شد؛ ذخیره و سپس منتشر کن.'); } }
+  else if (a === 'publish') publishPortal();
+  else if (a === 'export') exportAll();
+  else if (a === 'doimport') doImport();
+  else if (a === 'savesettings') {
+    DB.doc('meta/settings').set({ siteUrl: String(adm.settings.siteUrl || '').trim() }).then(function(){ toast('ذخیره شد.'); }, dbErr);
+  }
+});
+
+/* ==== SITE CONTENT EDITOR (drawer) + DOCUMENT BUILDER ==== */
+var edState = 'off', edTab = 'general', edOpen = '', edMsg = '', saving = false;
+
+function jsonForHtml(o){
+  return JSON.stringify(o).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+}
+function buildDoc(site, portal){
+  portal = portal || PORTAL;
+  var css = $('#app-css').textContent, js = $('#app-js').textContent;
+  return '<!DOCTYPE html>\n<html lang="fa" dir="rtl">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<title>' + esc(site.brand) + '</title>\n' + FONT +
+    '\n<style id="app-css">' + css + '</style>\n</head>\n<body>\n<div id="app"></div>\n<div id="ed"></div>\n<div id="modal"></div>\n<div id="toast" class="toast"></div>\n' +
+    '<script id="site-data" type="application/json">' + jsonForHtml(site) + '<\/script>\n' +
+    '<script id="portal-data" type="application/json">' + jsonForHtml(portal) + '<\/script>\n' +
+    '<script id="app-js">' + js + '<\/script>\n</body>\n</html>';
+}
+
+var renderTimer;
+function schedule(){ clearTimeout(renderTimer); renderTimer = setTimeout(render, 220); }
+
+function fld(label, path, o){
+  o = o || {};
+  var v = getP(draft, path);
+  var val = o.lines ? (v || []).join('\n') : (v == null ? '' : v);
+  var at = 'data-path="' + path + '"' + (o.lines ? ' data-lines="1"' : '');
+  var ctl = (o.area || o.lines)
+    ? '<textarea ' + at + ' rows="' + (o.rows || 3) + '" style="min-height:0">' + esc(val) + '</textarea>'
+    : '<input ' + at + ' type="' + (o.type || 'text') + '" value="' + esc(val) + '"' + (o.ph ? ' placeholder="' + esc(o.ph) + '"' : '') + (o.ltr ? ' dir="ltr" style="text-align:right"' : '') + '>';
+  return '<label class="f"><span>' + label + '</span>' + ctl + (o.hint ? '<small class="hint">' + o.hint + '</small>' : '') + '</label>';
+}
+
+function listEd(key, fields, titleKey, label, extra){
+  var arr = draft[key];
+  return arr.map(function(it, i){
+    var k = key + i;
+    return '<details class="item"' + (edOpen === k ? ' open' : '') + '><summary>' + esc(it[titleKey] || 'بدون عنوان') + '</summary>' +
+      fields.map(function(f){ return fld(f.l, key + '.' + i + '.' + f.p, f.o); }).join('') +
+      (extra ? extra(it, i) : '') +
+      '<div class="irow"><button class="mini" data-ed="up" data-key="' + key + '" data-i="' + i + '">↑ بالا</button>' +
+      '<button class="mini" data-ed="down" data-key="' + key + '" data-i="' + i + '">↓ پایین</button>' +
+      '<button class="mini danger" data-ed="del" data-key="' + key + '" data-i="' + i + '">حذف</button></div></details>';
+  }).join('') + '<button class="btn-add" data-ed="add" data-key="' + key + '">＋ ' + label + '</button>';
+}
+
+function tabBody(){
+  if (edTab === 'general') {
+    return '<div class="g-title">برند و صفحه اول</div>' +
+      fld('نام برند / سایت', 'brand') +
+      fld('رنگ اصلی سایت', 'accent', { type: 'color' }) +
+      fld('برچسب بالای عنوان', 'hero.eyebrow') +
+      fld('عنوان اصلی', 'hero.title') +
+      fld('توضیح زیر عنوان', 'hero.subtitle', { area: 1, rows: 3 }) +
+      fld('ویژگی‌های کوتاه', 'hero.badges', { lines: 1, rows: 3, hint: 'هر خط یک مورد' }) +
+      '<div class="g-title">عنوان بخش‌ها</div>' +
+      ['services:خدمات', 'portfolio:نمونه‌کارها', 'process:روش کار', 'order:ثبت سفارش', 'faq:سوالات'].map(function(x){
+        var p = x.split(':');
+        return fld('عنوان بخش ' + p[1], 'sections.' + p[0] + '.t') + fld('توضیح کوتاه بخش ' + p[1], 'sections.' + p[0] + '.s');
+      }).join('') +
+      '<div class="g-title">گزینه‌های فرم سفارش</div>' +
+      fld('گزینه‌های بودجه', 'form.budgets', { lines: 1, rows: 5, hint: 'هر خط یک گزینه' }) +
+      fld('گزینه‌های زمان تحویل', 'form.deadlines', { lines: 1, rows: 4, hint: 'هر خط یک گزینه' });
+  }
+  if (edTab === 'contact') {
+    return '<div class="note">سفارش‌ها و درخواست‌های ثبت‌نام با این راه‌ها برای شما ارسال می‌شود. هر کدام را خالی بگذاری، نمایش داده نمی‌شود.</div>' +
+      fld('شماره واتساپ', 'contact.whatsapp', { ltr: 1, ph: '989121234567', hint: 'با کد کشور و بدون + یا صفر اول (مثلاً 989121234567)' }) +
+      fld('آیدی تلگرام', 'contact.telegram', { ltr: 1, ph: 'username' }) +
+      fld('ایمیل', 'contact.email', { ltr: 1, ph: 'you@example.com' }) +
+      fld('اینستاگرام', 'contact.instagram', { ltr: 1, ph: 'username' }) +
+      fld('شماره تلفن (نمایش در پایین سایت)', 'contact.phone', { ltr: 1 });
+  }
+  if (edTab === 'services') {
+    return listEd('services', [
+      { l: 'آیکون (یک ایموجی)', p: 'icon' }, { l: 'عنوان خدمت', p: 'title' },
+      { l: 'توضیح', p: 'desc', o: { area: 1 } }, { l: 'قیمت / متن زیر کارت', p: 'price' }
+    ], 'title', 'افزودن خدمت');
+  }
+  if (edTab === 'portfolio') {
+    return listEd('portfolio', [
+      { l: 'عنوان پروژه', p: 'title' }, { l: 'دسته‌بندی', p: 'category', o: { hint: 'پروژه‌های هم‌دسته با یک نام نوشته شوند تا فیلتر بسازند' } },
+      { l: 'توضیح', p: 'desc', o: { area: 1 } }, { l: 'لینک پروژه (اختیاری)', p: 'link', o: { ltr: 1, ph: 'https://…' } }
+    ], 'title', 'افزودن نمونه‌کار', function(it, i){
+      return '<div class="irow">' + (it.image ? '<img class="imgprev" src="' + esc(it.image) + '" alt="">' : '') +
+        '<label class="mini">' + (it.image ? 'تغییر تصویر' : 'انتخاب تصویر') + '<input type="file" accept="image/*" hidden data-file="' + i + '"></label>' +
+        (it.image ? '<button class="mini danger" data-ed="rmimg" data-i="' + i + '">حذف تصویر</button>' : '') + '</div>';
+    });
+  }
+  if (edTab === 'steps') return listEd('steps', [{ l: 'عنوان مرحله', p: 'title' }, { l: 'توضیح', p: 'desc', o: { area: 1 } }], 'title', 'افزودن مرحله');
+  if (edTab === 'faq') return listEd('faq', [{ l: 'سوال', p: 'q' }, { l: 'پاسخ', p: 'a', o: { area: 1, rows: 4 } }], 'q', 'افزودن سوال');
+  return '';
+}
+
+function renderEditor(){
+  var root = $('#ed');
+  if (!root) return;
+  if (!isEditor || view !== 'site') { root.innerHTML = ''; return; }
+  if (edState !== 'open') {
+    root.innerHTML = '<button class="fab" data-ed="open">' + (draft ? '↩ ادامه ویرایش' : '✏️ ویرایش سایت') + '</button>';
+    return;
+  }
+  var old = $('.d-body'), st = old ? old.scrollTop : 0;
+  var tabs = [['general', 'عمومی'], ['contact', 'تماس'], ['services', 'خدمات'], ['portfolio', 'نمونه‌کارها'], ['steps', 'مراحل'], ['faq', 'سوالات']];
+  root.innerHTML = '<aside class="drawer" role="dialog" aria-label="ویرایش سایت">' +
+    '<div class="d-head"><strong>ویرایش محتوای سایت</strong><button class="mini" data-ed="min">پیش‌نمایش ▾</button></div>' +
+    '<div class="d-tabs">' + tabs.map(function(t){ return '<button data-tab="' + t[0] + '" class="' + (edTab === t[0] ? 'on' : '') + '">' + t[1] + '</button>'; }).join('') + '</div>' +
+    '<div class="d-body">' + tabBody() + '</div>' +
+    '<div class="d-foot"><span id="ed-msg">' + esc(edMsg) + '</span><div><button class="btn btn-sm" data-ed="save">ذخیره و انتشار</button><button class="btn ghost btn-sm" data-ed="cancel">انصراف</button></div></div></aside>';
+  var nb = $('.d-body'); if (nb) nb.scrollTop = st;
+}
+function setMsg(m){ edMsg = m; var el = $('#ed-msg'); if (el) el.textContent = m; }
+
+function startEdit(){ if (!draft) draft = clone(DATA); edState = 'open'; render(); renderEditor(); }
+
+function fileToDataURL(file, max){
+  return new Promise(function(res, rej){
+    var fr = new FileReader();
+    fr.onerror = rej;
+    fr.onload = function(){
+      var img = new Image();
+      img.onerror = rej;
+      img.onload = function(){
+        var r = Math.min(1, max / Math.max(img.width, img.height));
+        var c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(img.width * r)); c.height = Math.max(1, Math.round(img.height * r));
+        var x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height);
+        x.drawImage(img, 0, 0, c.width, c.height);
+        res(c.toDataURL('image/jpeg', 0.8));
+      };
+      img.src = fr.result;
+    };
+    fr.readAsDataURL(file);
+  });
+}
+
+function saveSite(){
+  if (saving) return;
+  if ($('#app-js').textContent.indexOf('function buildDoc') < 0 || $('#app-css').textContent.length < 500 || !CAPS.artifact) { setMsg('ذخیره در این نمایش ممکن نیست.'); return; }
+  saving = true; setMsg('در حال انتشار…');
+  CAPS.artifact.publish(buildDoc(draft, PORTAL)).then(function(){
+    setMsg('منتشر شد؛ صفحه دوباره بارگذاری می‌شود…');
+  }, function(err){
+    saving = false;
+    var c = err && err.code;
+    setMsg(c === 'conflict' ? 'نسخه جدیدتری منتشر شده بود؛ صفحه دوباره بارگذاری می‌شود.' :
+           c === 'too_large' ? 'حجم تصاویر زیاد است؛ تصاویر کوچک‌تر یا کمتر انتخاب کن.' :
+           c === 'not_writer' || c === 'not_granted' ? 'اجازه ویرایش این سایت را نداری.' :
+           c === 'rate_limited' ? 'کمی صبر کن و دوباره امتحان کن.' : 'انتشار انجام نشد (' + (c || 'خطا') + ').');
+  });
+}
+
+document.addEventListener('input', function(e){
+  var t = e.target;
+  if (!draft || !t.dataset || !t.dataset.path) return;
+  var v = t.dataset.lines ? t.value.split('\n').map(function(x){ return x.trim(); }).filter(Boolean) : t.value;
+  setP(draft, t.dataset.path, v);
+  schedule();
+});
+
+document.addEventListener('change', function(e){
+  var t = e.target;
+  if (!draft || !t.dataset || t.dataset.file == null) return;
+  var i = +t.dataset.file, f = t.files && t.files[0];
+  if (!f) return;
+  setMsg('در حال آماده‌سازی تصویر…');
+  fileToDataURL(f, 900).then(function(url){
+    draft.portfolio[i].image = url; edOpen = 'portfolio' + i; setMsg(''); render(); renderEditor();
+  }, function(){ setMsg('این فایل به‌عنوان تصویر خوانده نشد.'); });
+});
+
+document.addEventListener('click', function(e){
+  var tb = e.target.closest('[data-tab]');
+  if (tb && draft) { edTab = tb.dataset.tab; edOpen = ''; renderEditor(); return; }
+  var t = e.target.closest('[data-ed]');
+  if (!t) return;
+  var a = t.dataset.ed, key = t.dataset.key, i = +t.dataset.i;
+  if (a === 'open') startEdit();
+  else if (a === 'min') { edState = 'min'; renderEditor(); }
+  else if (a === 'cancel') { draft = null; edState = 'off'; edMsg = ''; render(); renderEditor(); }
+  else if (a === 'save') saveSite();
+  else if (a === 'add') {
+    var blank = {
+      services: { id: uid(), icon: '⭐', title: 'خدمت جدید', desc: '', price: '' },
+      portfolio: { id: uid(), title: 'نمونه‌کار جدید', category: '', desc: '', image: '', link: '' },
+      steps: { title: 'مرحله جدید', desc: '' },
+      faq: { q: 'سوال جدید', a: '' }
+    }[key];
+    draft[key].push(blank); edOpen = key + (draft[key].length - 1); render(); renderEditor();
+  } else if (a === 'del') {
+    draft[key].splice(i, 1); edOpen = ''; render(); renderEditor();
+  } else if (a === 'up' || a === 'down') {
+    var j = a === 'up' ? i - 1 : i + 1, arr = draft[key];
+    if (j >= 0 && j < arr.length) { var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp; edOpen = key + j; render(); renderEditor(); }
+  } else if (a === 'rmimg') {
+    draft.portfolio[i].image = ''; edOpen = 'portfolio' + i; render(); renderEditor();
+  }
+});
+
+/* ==== MAIN WIRING ==== */
+document.addEventListener('input', function(e){
+  var t = e.target;
+  if (t.closest && t.closest('[data-form]') && t.name && t.name in F) F[t.name] = t.value;
+});
+
+document.addEventListener('submit', function(e){
+  if (!e.target.matches('[data-form]')) return;
+  e.preventDefault();
+  if (validate()) { F.result = buildMsg(D()); renderOrder(); var w = $('#order'); if (w) w.scrollIntoView({ behavior: 'smooth' }); }
+  else { renderOrder(); var er = $('#order-wrap .err'); if (er) er.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+});
+
+document.addEventListener('click', function(e){
+  var g = e.target.closest('[data-go]');
+  if (g) { e.preventDefault(); go(g.dataset.go); return; }
+  var pt = e.target.closest('[data-pt]');
+  if (pt) { pTab = pt.dataset.pt; pErr = ''; renderPortal(); return; }
+  var t = e.target.closest('[data-act],[data-filter],[data-copyfirst]');
+  if (!t) return;
+  var txt = view === 'portal' ? REG.result : F.result;
+  if (t.dataset.copyfirst && txt) { try { navigator.clipboard.writeText(txt); } catch (x) {} return; }
+  if (t.dataset.filter) {
+    filter = t.dataset.filter;
+    $('#pgrid').innerHTML = portfolioGrid(D());
+    document.querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on', c.dataset.filter === filter); });
+    return;
+  }
+  var a = t.dataset.act;
+  if (a === 'pick') {
+    F.service = t.dataset.id; delete F.errors.service; F.result = null; renderOrder();
+    if (t.dataset.scroll) { var o = $('#order'); if (o) o.scrollIntoView({ behavior: 'smooth' }); }
+  } else if (a === 'copy') { copyText(txt, t); }
+  else if (a === 'again') {
+    F.service = ''; F.details = ''; F.budget = ''; F.deadline = ''; F.result = null; F.errors = {}; renderOrder();
+  } else if (a === 'regagain') { REG = { name: '', phone: '', email: '', note: '', errors: {}, result: null }; renderPortal(); }
+  else if (a === 'logout') logout();
+  else if (a === 'newfromportal') {
+    if (sess) { F.name = sess.rec.name || ''; F.contact = sess.rec.phone || ''; }
+    F.result = null; F.errors = {};
+    go('site');
+    setTimeout(function(){ var o = $('#order'); if (o) o.scrollIntoView({ behavior: 'smooth' }); }, 60);
+  }
+});
+
+window.addEventListener('hashchange', routeFromHash);
+
+(function init(){
+  var h = location.hash || '';
+  view = h.indexOf('#/admin') === 0 ? 'admin' : h.indexOf('#/portal') === 0 ? 'portal' : 'site';
+  draw(false);
+  loadCaps().then(function(){
+    if (CAPS.admin) { if (view === 'site') renderSite(); renderEditor(); }
+  });
+  autoLogin();
+})();
+
+})();</script>
+</body>
+</html>
